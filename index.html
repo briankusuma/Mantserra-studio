@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mantserra — a curated celebration of music, art, and atmosphere. Discover artists, live performances, and extraordinary experiences." />
+    <meta name="theme-color" content="#000000" />
+    <title>Mantserra — Music, Art & Atmosphere</title>
+    <link rel="preload" href="./assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" data-header>
+      <div class="site-header__inner layout-container">
+        <a class="site-header__brand" href="#home" aria-label="Mantserra home">Mantserra</a>
+        <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle hidden>Menu</button>
+        <nav class="site-header__navigation" id="primary-navigation" aria-label="Primary" data-navigation>
+          <ul class="site-header__menu">
+            <li><a class="site-header__link" href="#home">Home</a></li>
+            <li><a class="site-header__link" href="#artists">Artists</a></li>
+            <li><a class="site-header__link" href="#schedule">Schedule</a></li>
+            <li><a class="site-header__link" href="#experiences">Experiences</a></li>
+            <li><a class="site-header__link" href="#about">About</a></li>
+          </ul>
+        </nav>
+        <button class="site-header__tickets text-button" type="button" data-ticket-open>Get Tickets</button>
+      </div>
+    </header>
+    <main id="main-content">
+      <!-- Hero · Figma 3915:353 -->
+      <section class="hero" id="home" aria-labelledby="hero-title" data-hero>
+        <div class="hero__background" aria-hidden="true">
+          <img class="hero__photo" src="./assets/images/cf64c.png" width="4096" height="2731" alt="" fetchpriority="high" />
+          <img class="hero__shade" src="./assets/images/e9544.png" width="1024" height="89" alt="" />
+          <p class="hero__ghost">Laude <em>Simmons</em></p>
+        </div>
+        <p class="hero__introduction">Belgian festies have descended <em>4-day tribute to rock, pop, and everything loud.</em></p>
+        <div class="hero__ticket-stage">
+          <article class="ticket" aria-label="Brookly Simmons Concert, 16 April, 04:30 PM, £325">
+            <div class="ticket__window" aria-hidden="true"></div>
+            <img class="ticket__shape" src="./assets/icons/d5cc4.svg" width="413" height="575" alt="" />
+            <p class="ticket__date"><span>04:30 PM</span><span>16 APR</span></p>
+            <img class="ticket__dot" src="./assets/icons/c8ec7.svg" width="26" height="26" alt="" />
+            <img class="ticket__dots" src="./assets/icons/23c4a.svg" width="52" height="26" alt="" />
+            <h2 class="ticket__name">Brookly<br />Simmons Concert</h2>
+            <span class="ticket__price">£325</span>
+          </article>
+        </div>
+        <div class="hero__bottom">
+          <p class="hero__caption">Quality Digital<br />Goods For Sale</p>
+          <div class="hero__signature">
+            <h1 class="hero__title" id="hero-title">Laude <em>Simmons</em></h1>
+            <div class="hero__legal"><p>Copyright 2026</p><p>Eentertainment + Music Specialist</p></div>
+          </div>
+        </div>
+      </section>
+      <!-- Experiences · Figma 3915:386 -->
+      <section class="experiences layout-container" id="experiences" aria-labelledby="experiences-title" data-experiences>
+        <h2 class="experiences__heading art-heading" id="experiences-title" data-reveal>
+          <span class="u-sr-only">A curated celebration of music, art, and atmosphere. From underground sounds to global headliners.</span>
+          <span class="art-heading__visual art-heading__visual--intro" aria-hidden="true"></span>
+        </h2>
+        <div class="experiences__divider" aria-hidden="true"></div>
+        <div class="experiences__event" data-experience-event>
+          <div class="experiences__gallery" data-reveal>
+            <img class="experiences__image" src="./assets/images/5e450.png" width="992" height="1200" alt="Artist beneath cool blue concert lights" loading="lazy" />
+            <div class="experiences__ticket-image">
+              <img class="experiences__image experiences__image--close" src="./assets/images/111c6.png" width="1984" height="2400" alt="Live performer in a wash of warm orange light" loading="lazy" />
+              <button class="experiences__ticket-button" type="button" data-ticket-open data-ticket-event="experience">Get ticket</button>
+            </div>
+            <div class="experiences__empty-image" aria-hidden="true"></div>
+            <img class="experiences__image" src="./assets/images/76b71.png" width="904" height="1200" alt="Blurred portrait in a crowd at dusk" loading="lazy" />
+          </div>
+          <div class="experiences__information">
+            <div class="experiences__identity"><div class="metadata"><span>Experiences</span><span>24 MAR</span></div><h3>Simmons Wellington</h3></div>
+            <div class="experiences__description"><p>An unforgettable night of live performances, visual installations, and immersive soundscapes.</p><p class="experiences__location metadata">Wellington, New Zealand</p></div>
+            <div class="experiences__indicators" aria-hidden="true">
+              <img src="./assets/icons/experience-indicators.svg" width="56" height="26" alt="" />
+            </div>
+          </div>
+        </div>
+        <p class="experiences__empty-state" data-empty-state role="status" hidden>No experiences listed in this category yet.</p>
+        <div class="experiences__bottom">
+          <div class="experiences__filters" role="group" aria-label="Filter experiences" data-filters>
+            <div class="experiences__filter-row">
+              <button class="pill pill--active" type="button" aria-pressed="true" data-category="all">All</button>
+              <button class="pill" type="button" aria-pressed="false" data-category="alternative">Alternative</button>
+              <button class="pill" type="button" aria-pressed="false" data-category="indie">Indie</button>
+              <button class="pill" type="button" aria-pressed="false" data-category="hip-hop">Hip hop</button>
+            </div>
+            <div class="experiences__filter-row">
+              <button class="pill" type="button" aria-pressed="false" data-category="live-bands">Live bands</button>
+              <button class="pill" type="button" aria-pressed="false" data-category="experiences">Experiences</button>
+              <button class="pill" type="button" aria-pressed="false" data-category="categories">Categories</button>
+            </div>
+          </div>
+          <div class="experiences__swatches" aria-hidden="true"><img src="./assets/images/ac682.png" width="1024" height="1024" alt="" loading="lazy" /><span></span><span></span></div>
+        </div>
+      </section>
+      <!-- Artist feature · Figma 3915:425 -->
+      <section class="artist layout-container" id="artists" aria-labelledby="artist-title">
+        <div class="artist__left">
+          <div class="artist__metadata"><p>American Football</p><span>001</span></div>
+          <div class="artist__portrait" data-reveal>
+            <img class="artist__photo" src="./assets/images/673a9.png" width="1808" height="2400" alt="Two concertgoers in warm amber light" loading="lazy" />
+            <div class="artist__ticket-stage">
+              <article class="ticket" aria-label="Samantha dè Lauretta Concert, 28 March, 05:20 PM, sold out">
+                <div class="ticket__window" aria-hidden="true"></div>
+                <img class="ticket__shape" src="./assets/icons/d5cc4.svg" width="413" height="575" alt="" />
+                <p class="ticket__date"><span>05:20 PM</span><span>28 MAR</span></p>
+                <img class="ticket__dot" src="./assets/icons/c8ec7.svg" width="26" height="26" alt="" />
+                <img class="ticket__dots" src="./assets/icons/23c4a.svg" width="52" height="26" alt="" />
+                <h3 class="ticket__name">Samantha<br />dè Lauretta Concert</h3>
+                <span class="ticket__price">Sold out</span>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="artist__right">
+          <div class="artist__metadata"><p>The Sound of the Year</p><span>2026</span></div>
+          <h2 class="artist__heading art-heading" id="artist-title" data-reveal><span class="u-sr-only">A carefully curated mix of rising talents and conic performers.</span><span class="art-heading__visual art-heading__visual--artist" aria-hidden="true"></span></h2>
+          <div class="artist__details">
+            <div class="artist__copy"><span class="pill">Alternative</span><p>A space dedicated to boundary-pushing sounds and experimental performances. From genre-defying artists to unexpected collaborations.</p></div>
+            <div class="artist__secondary-photo"><img src="./assets/images/1d03e.png" width="992" height="1200" alt="Artist portrait with expressive motion blur" loading="lazy" /></div>
+          </div>
+        </div>
+      </section>
+      <!-- Schedule · Figma 3915:453 -->
+      <section class="schedule" id="schedule" aria-labelledby="schedule-title" data-schedule>
+        <div class="schedule__rails" aria-hidden="true"></div>
+        <div class="schedule__heading-row">
+          <h2 class="schedule__heading art-heading" id="schedule-title" data-reveal><span class="u-sr-only">Electronic Music Showcase &amp; Live Performances</span><span class="art-heading__visual art-heading__visual--schedule" aria-hidden="true"></span></h2>
+          <button class="schedule__other text-button" type="button" data-show-schedule>View other Schedule</button>
+        </div>
+        <div class="schedule__list">
+          <details class="schedule__item" name="showcase">
+            <summary class="schedule__summary"><span class="schedule__number">001</span><h3 class="schedule__name">Opening Set</h3><span class="schedule__tags"><span class="pill">16:00–18:00</span><span class="pill">Categories</span></span><span class="schedule__time">16:00–18:00</span></summary>
+            <div class="schedule__panel">
+              <div class="schedule__content">
+                <div class="schedule__images">
+                  <img src="./assets/images/schedule/opening-01.png" width="1254" height="1254" alt="Singer silhouetted against a golden sunset" loading="lazy" />
+                  <img src="./assets/images/schedule/opening-02.png" width="1254" height="1254" alt="Hands playing an analogue synthesizer in amber stage light" loading="lazy" />
+                  <img src="./assets/images/schedule/opening-03.png" width="1254" height="1254" alt="Audience moving in the late afternoon light" loading="lazy" />
+                </div>
+                <div class="schedule__information">
+                  <div class="schedule__feature"><p class="metadata">Festival Feature</p><h4>Opening Set</h4></div>
+                  <p class="schedule__description">16:00–18:00</p>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="schedule__item" name="showcase" open>
+            <summary class="schedule__summary"><span class="schedule__number">002</span><h3 class="schedule__name">Headliner</h3><span class="schedule__tags"><span class="pill">18:00–20:00</span><span class="pill">Categories</span><span class="pill">Categories</span></span><span class="schedule__time">18:00–20:00</span></summary>
+            <div class="schedule__panel">
+              <div class="schedule__content">
+                <div class="schedule__images">
+                  <img src="./assets/images/01044.png" width="820" height="1024" alt="Silhouette moving against the sunset" loading="lazy" />
+                  <img src="./assets/images/59cbf.png" width="847" height="1024" alt="Experimental performance in amber light" loading="lazy" />
+                  <img src="./assets/images/4a52d.png" width="904" height="1200" alt="Expressive movement during a live performance" loading="lazy" />
+                </div>
+                <div class="schedule__information">
+                  <div class="schedule__feature"><p class="metadata">Festival Feature</p><h4>Chris Stussy</h4></div>
+                  <p class="schedule__description">An experimental live performance combining electronic soundscapes with expressive movement. Known for pushing boundaries.</p>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="schedule__item" name="showcase">
+            <summary class="schedule__summary"><span class="schedule__number">003</span><h3 class="schedule__name">Late Night Session</h3><span class="schedule__tags"><span class="pill">20:00–23:00</span><span class="pill">Categories</span></span><span class="schedule__time">20:00–23:00</span></summary>
+            <div class="schedule__panel">
+              <div class="schedule__content">
+                <div class="schedule__images">
+                  <img src="./assets/images/schedule/late-night-01.png" width="1254" height="1254" alt="DJ at the decks in a hazy violet club" loading="lazy" />
+                  <img src="./assets/images/schedule/late-night-02.png" width="1254" height="1254" alt="Dancer in expressive movement under cobalt light" loading="lazy" />
+                  <img src="./assets/images/schedule/late-night-03.png" width="1254" height="1254" alt="Crowd beneath blue light beams at night" loading="lazy" />
+                </div>
+                <div class="schedule__information">
+                  <div class="schedule__feature"><p class="metadata">Festival Feature</p><h4>Late Night Session</h4></div>
+                  <p class="schedule__description">20:00–23:00</p>
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="schedule__item" name="showcase">
+            <summary class="schedule__summary"><span class="schedule__number">004</span><h3 class="schedule__name">Closing Act</h3><span class="schedule__tags"><span class="pill">23:00–01:00</span><span class="pill">Categories</span></span><span class="schedule__time">23:00–01:00</span></summary>
+            <div class="schedule__panel">
+              <div class="schedule__content">
+                <div class="schedule__images">
+                  <img src="./assets/images/schedule/closing-01.png" width="1254" height="1254" alt="Final performer holding a microphone in pale blue stage light" loading="lazy" />
+                  <img src="./assets/images/schedule/closing-02.png" width="1254" height="1254" alt="Drummer framed by silver haze during the final set" loading="lazy" />
+                  <img src="./assets/images/schedule/closing-03.png" width="1254" height="1254" alt="Audience silhouettes with hands raised at the closing performance" loading="lazy" />
+                </div>
+                <div class="schedule__information">
+                  <div class="schedule__feature"><p class="metadata">Festival Feature</p><h4>Closing Act</h4></div>
+                  <p class="schedule__description">23:00–01:00</p>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <!-- Editorial updates · Figma 3915:508 -->
+      <section class="updates" id="updates" aria-labelledby="updates-title">
+        <div class="updates__ruler" aria-hidden="true"><img src="./assets/icons/2641a.svg" width="2314" height="38.5938" alt="" /></div>
+        <div class="updates__top layout-container"><p>Be the first to hear about lineup drops.</p><p>Exclusive access, and limited releases.</p></div>
+        <div class="updates__heading-group" data-reveal><p class="updates__eyebrow">( Stay in the Loop )</p><h2 class="updates__heading art-heading" id="updates-title"><span class="u-sr-only">Be the first to know about lineup drops, exclusive access, and special releases.</span><span class="art-heading__visual art-heading__visual--updates" aria-hidden="true"></span></h2></div>
+        <img class="updates__tick" src="./assets/icons/c8650.svg" width="1" height="9.5" alt="" />
+        <div class="updates__grid">
+          <figure class="updates__story"><figcaption class="metadata"><span>Festival</span><span>24 MAR</span></figcaption><img src="./assets/images/cc2b4.png" width="800" height="1200" alt="Crowd in motion at a music festival" loading="lazy" /></figure>
+          <figure class="updates__story"><figcaption class="metadata"><span>Festival</span><span>28 MAR</span></figcaption><img src="./assets/images/40305.png" width="1200" height="673" alt="Portrait of a festival artist" loading="lazy" /></figure>
+          <article class="updates__article"><div><div class="metadata"><span>Festival</span><span>2 APR</span></div><h3>Music Festivals<br />Cancelled In 2026</h3></div><p>The Music Festival Wizard team will be keeping tabs on which festivals have been cancelled and whenever possible, we will add the official statement from the organizers. This article will be updated continuously over the year.</p></article>
+          <figure class="updates__story"><figcaption class="metadata"><span>Festival</span><span>8 APR</span></figcaption><img src="./assets/images/a5866.png" width="904" height="1200" alt="A concertgoer surrounded by a moving crowd" loading="lazy" /></figure>
+        </div>
+      </section>
+    </main>
+    <!-- Footer · Figma 3915:543 -->
+    <footer class="site-footer layout-container" id="about" aria-label="About Mantserra">
+      <nav class="site-footer__navigation" aria-label="Footer"><a href="#home">Home</a><a href="#artists">Artists</a><span>Playlists</span><span>Placements</span><a href="#about">About us</a></nav>
+      <div class="site-footer__content">
+        <div class="site-footer__left"><p class="site-footer__description">We’re a music-driven platform connecting artists, curators, and brands through thoughtfully crafted sound.</p>
+          <form class="contact" data-contact><label class="contact__label" for="contact-email">Get contact</label><div class="contact__row"><input class="contact__input" id="contact-email" name="email" type="email" placeholder="Your Email" autocomplete="email" required /><button class="contact__send text-button" type="submit">Send</button></div><div class="contact__divider" aria-hidden="true"></div><p class="contact__status" role="status" data-contact-status></p></form>
+        </div>
+        <h2 class="site-footer__heading" data-reveal>Get updates on new artists, curated playlists, and exclusive releases.</h2>
+      </div>
+      <div class="site-footer__wordmark" role="img" aria-label="Mantserra"></div>
+    </footer>
+    <dialog class="ticket-dialog" data-ticket-dialog data-lenis-prevent aria-labelledby="ticket-dialog-title">
+      <div class="ticket-dialog__top"><p class="metadata">Mantserra / Live</p><button class="text-button" type="button" data-ticket-close aria-label="Close ticket details">Close ×</button></div>
+      <h2 class="ticket-dialog__title" id="ticket-dialog-title"><span data-ticket-name>Brookly</span><br /><em data-ticket-subtitle>Simmons Concert</em></h2>
+      <dl class="ticket-dialog__details"><div><dt>Date</dt><dd data-ticket-date>16 APR</dd></div><div data-ticket-time-row><dt>Time</dt><dd>04:30 PM</dd></div><div data-ticket-price-row><dt>Price</dt><dd>£325</dd></div><div data-ticket-location-row hidden><dt>Location</dt><dd>Wellington, New Zealand</dd></div></dl>
+      <p class="ticket-dialog__notice">Online booking is not open yet. Check back for ticket availability.</p>
+    </dialog>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

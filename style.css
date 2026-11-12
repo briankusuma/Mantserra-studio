@@ -8,6 +8,9 @@
   color: #fff;
   background: #000;
   --cream: #fcf4e6;
+  --divider-dark: #34393a;
+  --divider-light: #f4e9d6;
+  --divider-contact: #141414;
   --gutter: 32px;
   --muted: rgb(255 255 255 / 50%);
 }
@@ -149,25 +152,25 @@ button.pill:hover, .pill--active {
 .art-heading__visual--intro {
   width: 466px;
   aspect-ratio: 466 / 102;
-  background-image: url('./assets/icons/heading-387.svg');
+  background-image: url('./assets/images/experiences-introduction.svg');
 }
 
 .art-heading__visual--artist {
   width: 569px;
   aspect-ratio: 569 / 185;
-  background-image: url('./assets/icons/heading-431.svg');
+  background-image: url('./assets/images/artists-feature.svg');
 }
 
 .art-heading__visual--schedule {
   width: 646px;
   aspect-ratio: 646 / 122;
-  background-image: url('./assets/icons/heading-463.svg');
+  background-image: url('./assets/images/schedule-showcase.svg');
 }
 
 .art-heading__visual--updates {
   width: 647px;
   aspect-ratio: 647 / 184;
-  background-image: url('./assets/icons/heading-540.svg');
+  background-image: url('./assets/images/updates-announcement.svg');
 }
 
 .site-header {
@@ -300,28 +303,38 @@ button.pill:hover, .pill--active {
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -1.4px;
+  --ticket-glass-blur: 16.5px;
 }
 
 .ticket__window {
   position: absolute;
+  z-index: 1;
   top: 24px;
   left: 24px;
   width: 365px;
   height: 378px;
   border-radius: 8px;
   background: rgb(255 255 255 / 10%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* Prefix lebih dahulu agar minifier tidak menghapus properti standar. */
+  -webkit-backdrop-filter: blur(var(--ticket-glass-blur));
+  backdrop-filter: blur(var(--ticket-glass-blur));
+  pointer-events: none;
 }
 
 .ticket__shape {
   position: absolute;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
+}
+
+.ticket--clear .ticket__window {
+  background: transparent;
 }
 
 .ticket__date {
   position: absolute;
+  z-index: 2;
   top: 38px;
   right: 38px;
   display: flex;
@@ -331,18 +344,21 @@ button.pill:hover, .pill--active {
 
 .ticket__dot {
   position: absolute;
+  z-index: 2;
   top: 462px;
   left: 24px;
 }
 
 .ticket__dots {
   position: absolute;
+  z-index: 2;
   top: 462px;
   right: 24px;
 }
 
 .ticket__name {
   position: absolute;
+  z-index: 2;
   top: 503px;
   left: 24px;
   max-width: 210px;
@@ -352,6 +368,7 @@ button.pill:hover, .pill--active {
 
 .ticket__price {
   position: absolute;
+  z-index: 2;
   right: 24px;
   bottom: 24px;
   color: #c2c2c2;
@@ -413,7 +430,7 @@ button.pill:hover, .pill--active {
   height: 1px;
   margin-top: 41px;
   margin-bottom: 49px;
-  background: url('./assets/icons/ae8f8.svg') left center / 100% 1px no-repeat;
+  background-color: var(--divider-dark);
 }
 
 .experiences__gallery {
@@ -459,7 +476,8 @@ button.pill:hover, .pill--active {
   border: 1px solid rgb(255 255 255 / 35%);
   border-radius: 999px;
   background: rgb(255 255 255 / 8%);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(16.5px);
+  backdrop-filter: blur(16.5px);
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -579,7 +597,7 @@ button.pill:hover, .pill--active {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: url('./assets/icons/66b07.svg') center / 1px 100% no-repeat;
+  background-color: var(--divider-light);
 }
 
 .artist::before {
@@ -716,7 +734,7 @@ button.pill:hover, .pill--active {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: url('./assets/icons/66b07.svg') center / 1px 100% no-repeat;
+  background-color: var(--divider-light);
 }
 
 .schedule__rails::before {
@@ -725,7 +743,6 @@ button.pill:hover, .pill--active {
 
 .schedule__rails::after {
   right: 0;
-  background-image: url('./assets/icons/dbeac.svg');
 }
 
 .schedule__heading-row {
@@ -735,7 +752,7 @@ button.pill:hover, .pill--active {
   gap: 32px;
   min-height: 172px;
   padding: 24px 32px 24px 56px;
-  background: url('./assets/icons/507bc.svg') left top / 100% 1px no-repeat;
+  box-shadow: inset 0 1px 0 var(--divider-light);
 }
 
 .schedule__heading {
@@ -758,7 +775,7 @@ button.pill:hover, .pill--active {
 }
 
 .schedule__item {
-  background: url('./assets/icons/507bc.svg') left top / 100% 1px no-repeat;
+  box-shadow: inset 0 1px 0 var(--divider-light);
 }
 
 .schedule__item:last-child {
@@ -814,7 +831,7 @@ button.pill:hover, .pill--active {
   gap: 0 16px;
   min-height: 440px;
   padding: 26px 32px 68px;
-  background: url('./assets/icons/507bc.svg') left top / 100% 1px no-repeat;
+  box-shadow: inset 0 1px 0 var(--divider-light);
 }
 
 .schedule__content {
@@ -931,6 +948,9 @@ button.pill:hover, .pill--active {
 
 .updates__tick {
   position: absolute;
+  width: 1px;
+  height: 9.5px;
+  background-color: #343434;
   top: 131px;
   left: calc(75% + 32px);
 }
@@ -1081,7 +1101,7 @@ button.pill:hover, .pill--active {
 .contact__divider {
   height: 1px;
   margin-top: 12px;
-  background: url('./assets/icons/35bea.svg') left center / 100% 1px no-repeat;
+  background-color: var(--divider-contact);
 }
 
 .contact__status {
@@ -1098,7 +1118,7 @@ button.pill:hover, .pill--active {
   width: 100%;
   aspect-ratio: 1375 / 320;
   margin-top: 193px;
-  background: url('./assets/icons/80d8d.svg') center / contain no-repeat;
+  background: url('./assets/images/mantserra-wordmark.svg') center / contain no-repeat;
 }
 
 .ticket-dialog {
@@ -1113,6 +1133,7 @@ button.pill:hover, .pill--active {
 
 .ticket-dialog::backdrop {
   background: rgb(0 0 0 / 75%);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 

@@ -10,28 +10,28 @@ HTML/CSS baru memakai organisasi Maka. Tidak membawa efek cursor, preloader, fot
 
 ## Pemetaan aset
 
-Nama hash asli dipertahankan untuk penelusuran. Semua file di bawah sudah diunduh lokal; root dimension SVG asli tidak diedit. Aset dekoratif berupa garis/heading/wordmark digunakan sebagai background CSS dengan wrapper sesuai slot, bukan digambar ulang.
+Aset memakai nama deskriptif dan dikelompokkan per fungsi/section. Pemetaan hash nama lama ke path baru beserta checksum tersedia di `asset-renames.json`. Semua file di bawah sudah diunduh lokal; root dimension SVG asli tidak diedit. Heading dan wordmark tetap menggunakan aset SVG asli; garis sederhana memakai CSS dengan warna stroke sumber.
 
 | Slot / node | Aset lokal | Geometry utama pada desktop |
 | --- | --- | --- |
-| Hero photo 3915:354 | images/cf64c.png | 1779 × 1186, offset -147 / -61 pada baseline 1440 |
-| Hero shade 3915:356 | images/e9544.png | Full width × 124, bawah hero |
-| Kedua kartu tiket 3915:371 / 438 | icons/d5cc4.svg | 413 × 575; kartu diskalakan sebagai satu wrapper di mobile |
-| Ikon kartu | icons/c8ec7.svg, 23c4a.svg | 26 × 26 dan 52 × 26, slot bawah tiket |
-| Experiences 3915:389 / 390 / 391 | images/5e450.png, 111c6.png, 76b71.png | Grid empat kolom, slot 332 × 332; foto tengah mengikuti crop sumber |
-| Experiences swatch 3915:394 | images/ac682.png | 108 × 108 |
-| Experiences divider / indikator | icons/ae8f8.svg, f45f9.svg, 16c88.svg | Divider 1376 × 1; indikator 26 × 26 |
-| Artist photo 3915:426 | images/673a9.png | Slot 680 × 908, crop asli |
-| Artist secondary 3915:433 | images/1d03e.png | Slot 304 × 359, crop asli |
-| Artist/schedule rails | icons/66b07.svg, dbeac.svg | Garis vertikal pada gutter |
-| Schedule 3915:499 / 500 / 501 | images/01044.png, 59cbf.png, 4a52d.png | Tiga slot persegi 215/216px |
-| Schedule divider | icons/507bc.svg | Full width × 1 |
-| Updates 3915:509 / 510 / 512 | images/cc2b4.png, 40305.png, a5866.png | Slot 360 × 426, crop object-fit cover |
-| Updates ruler / tick | icons/2641a.svg, c8650.svg | SVG asli 2314 × 38.5938 dan 1 × 9.5 |
-| Footer wordmark 3915:552 | icons/80d8d.svg | Rasio asli 1375 / 320 |
-| Footer divider 3915:560 | icons/35bea.svg | 332 × 1 |
+| Hero photo 3915:354 | images/hero/concert-crowd.png | 1779 × 1186, offset -147 / -61 pada baseline 1440 |
+| Hero shade 3915:356 | images/hero/bottom-shade.png | Full width × 124, bawah hero |
+| Kedua kartu tiket 3915:371 / 438 | images/ticket-frame.svg | 413 × 575; kartu diskalakan sebagai satu wrapper di mobile |
+| Ikon kartu | icons/ticket-dot.svg, ticket-dots.svg | 26 × 26 dan 52 × 26, slot bawah tiket |
+| Experiences 3915:389 / 390 / 391 | images/experiences/blue-light-artist.png, amber-live-performer.png, crowd-portrait.png | Grid empat kolom, slot 332 × 332; foto tengah mengikuti crop sumber |
+| Experiences swatch 3915:394 | images/experiences/festival-performer-thumbnail.png | 108 × 108 |
+| Experiences divider / indikator | CSS .experiences__divider, icons/experiences-indicators.svg | Divider 1376 × 1; grup indikator 56 × 26 |
+| Artist photo 3915:426 | images/artists/concert-couple.png | Slot 680 × 908, crop asli |
+| Artist secondary 3915:433 | images/artists/motion-portrait.png | Slot 304 × 359, crop asli |
+| Artist/schedule rails | CSS pseudo-element rail | Garis vertikal pada gutter |
+| Schedule 3915:499 / 500 / 501 | images/schedule/headliner-01-sunset.png, headliner-02-dancer.png, headliner-03-movement.png | Tiga slot persegi 215/216px |
+| Schedule divider | CSS inset line 1px | Full width × 1 |
+| Updates 3915:509 / 510 / 512 | images/updates/festival-crowd.png, artist-portrait.png, concert-crowd.png | Slot 360 × 426, crop object-fit cover |
+| Updates ruler / tick | images/updates-ruler.svg dan CSS .updates__tick | SVG asli 2314 × 38.5938 dan 1 × 9.5 |
+| Footer wordmark 3915:552 | images/mantserra-wordmark.svg | Rasio asli 1375 / 320 |
+| Footer divider 3915:560 | CSS .contact__divider | 332 × 1 |
 
-Empat heading yang memakai Awesome Serif diekspor sebagai SVG outline dari node teks asli: `heading-387.svg` (466 × 102), `heading-431.svg` (569 × 185), `heading-463.svg` (646 × 122), `heading-540.svg` (647 × 184). Ukuran export adalah batas tinta SVG, berbeda dengan frame teks yang juga memuat whitespace. Tidak ada font alternatif yang menyamar sebagai Awesome Serif. Setiap heading tetap memiliki teks HTML untuk pembaca layar. Konsekuensinya, perubahan copy visual membutuhkan export ulang atau font berlisensi.
+Empat heading yang memakai Awesome Serif diekspor sebagai SVG outline dari node teks asli: `experiences-introduction.svg` (466 × 102), `artists-feature.svg` (569 × 185), `schedule-showcase.svg` (646 × 122), `updates-announcement.svg` (647 × 184). Ukuran export adalah batas tinta SVG, berbeda dengan frame teks yang juga memuat whitespace. Tidak ada font alternatif yang menyamar sebagai Awesome Serif. Setiap heading tetap memiliki teks HTML untuk pembaca layar. Konsekuensinya, perubahan copy visual membutuhkan export ulang atau font berlisensi.
 
 Layer kosong pada experiences dan editorial tetap kosong sesuai konteks Figma. Tidak diisi foto tambahan. Copy sumber, termasuk ejaan yang tidak konsisten, dipertahankan.
 
@@ -59,7 +59,7 @@ Belum diverifikasi secara manual: semua browser/breakpoint, toggle reduced motio
 
 Node `3915:386` diperiksa ulang setelah permintaan revisi pengguna. Penyebab utama galeri memanjang adalah atribut HTML `height` foto yang masih menentukan tinggi elemen ketika CSS hanya mengatur width dan aspect-ratio. CSS section kini menetapkan `height: auto` sehingga preferred aspect-ratio 1:1 membentuk slot persegi; foto close-up tetap mengikuti crop persentase Figma. Koreksi ini dibatasi pada experiences.
 
-Section desktop memakai flex column dengan baris kategori/swatch di bagian bawah min-height 1024px, gutter 32px, dan padding bawah 32px. Filter dibagi menjadi dua baris eksplisit dengan tombol setinggi 37px. Indikator lama dua SVG diganti aset grup asli terbaru `assets/icons/experience-indicators.svg` (node `3928:357`, 56 × 26). Jarak lokasi dibuat 16px dan posisi indikator mengikuti inset kanan referensi. Spacing tablet/mobile tetap memakai flow responsif, dengan slot foto persegi.
+Section desktop memakai flex column dengan baris kategori/swatch di bagian bawah min-height 1024px, gutter 32px, dan padding bawah 32px. Filter dibagi menjadi dua baris eksplisit dengan tombol setinggi 37px. Indikator lama dua SVG diganti aset grup asli terbaru `assets/icons/experiences-indicators.svg` (node `3928:357`, 56 × 26). Jarak lokasi dibuat 16px dan posisi indikator mengikuti inset kanan referensi. Spacing tablet/mobile tetap memakai flow responsif, dengan slot foto persegi.
 
 Perbaikan utama galeri diperiksa langsung di Chrome desktop: ketiga foto kini sejajar, persegi dan tidak memanjangkan section seperti sebelumnya. Build produksi diperiksa kembali. Pemeriksaan ulang mobile visual untuk revisi ini belum dilakukan; pemeriksaan mobile pada implementasi sebelumnya tidak dianggap sebagai bukti untuk CSS revisi ini.
 
@@ -70,3 +70,7 @@ Panel konten schedule diperbarui ke komposisi Figma terbaru: tiga foto 215/216/2
 Headliner mempertahankan ketiga foto, nama Chris Stussy, dan deskripsi asli. Panel Opening Set, Late Night Session, dan Closing Act masing-masing memiliki tiga gambar baru yang dibuat dengan built-in image_gen, disimpan di `assets/images/schedule/` dan sudah terhubung ke HTML. Sembilan file final berukuran 1254 × 1254px meskipun prompt meminta 1024px; atribut HTML mengikuti dimensi file aktual. Tidak ada gambar yang disalin antar panel. Prompt lengkap dan path final dicatat dalam `schedule-imagery.md`. Semua output diperiksa secara visual sebelum dipakai.
 
 Verifikasi revisi: empat panel masing-masing memiliki tiga aset lokal non-empty, sembilan gambar generated memiliki hash berbeda, dan gambar Headliner tetap asli. Build produksi berhasil. Di Chrome desktop, panel 1/2/3/4 dibuka bergantian dan screenshot memperlihatkan foto persegi serta baris metadata yang baru. Pergantian panel menutup panel sebelumnya. Emulasi iPhone 16 393px diperiksa untuk panel Closing Act dan struktur Headliner; tiga foto tetap sejajar dan metadata tetap terbaca. Semua breakpoint/browser belum diuji.
+
+## Penyederhanaan divider
+
+Lima SVG divider/rail dan satu SVG tick updates diperiksa: semuanya hanya satu path garis lurus. Aset tersebut diganti CSS 1px dengan warna stroke asli (#34393A, #F4E9D6, #141414, dan #343434). Garis horizontal schedule memakai inset shadow agar tidak mengubah ukuran layout. Divider experiences/kontak memakai background-color; rail memakai pseudo-element dan tick updates memakai span dekoratif. Folder assets/dividers dihapus. Penggaris updates yang kompleks tetap memakai SVG asli. Pemetaan pengganti dicatat pada css_replacements di asset-renames.json.

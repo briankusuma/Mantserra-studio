@@ -1,0 +1,228 @@
+{
+  "description": "Asset names updated without modifying binary contents. Previous paths retained only for provenance.",
+  "renames": [
+    {
+      "previous_path": "assets/images/cf64c.png",
+      "path": "assets/images/hero/concert-crowd.png",
+      "sha256": "0b464ac06f864055bdfa90731f83fd88ef7d0a7c240e4bb1027ce243b95a3eca"
+    },
+    {
+      "previous_path": "assets/images/e9544.png",
+      "path": "assets/images/hero/bottom-shade.png",
+      "sha256": "3af1bdfdbbd6055187a76885c55ba32c553863c5433d46c804e8132361fb0c6f"
+    },
+    {
+      "previous_path": "assets/images/5e450.png",
+      "path": "assets/images/experiences/blue-light-artist.png",
+      "sha256": "573a02c478e042f7b0df5c22f97bd558e5190990e04f7ae0618458e4f9c4b358"
+    },
+    {
+      "previous_path": "assets/images/111c6.png",
+      "path": "assets/images/experiences/amber-live-performer.png",
+      "sha256": "7b0ee7f380d15fe9b5fad7266477707ce9d25d2ee33b5844f3ab62632dcbe736"
+    },
+    {
+      "previous_path": "assets/images/76b71.png",
+      "path": "assets/images/experiences/crowd-portrait.png",
+      "sha256": "69f71c2e193cf553b1a5f22025859e81c8d5e4d82609b2059cc11311e46c4ddc"
+    },
+    {
+      "previous_path": "assets/images/ac682.png",
+      "path": "assets/images/experiences/festival-performer-thumbnail.png",
+      "sha256": "12ff6b181ccba428d37694a5d59e33eb3e9a33906dca98934d00cfe695d689e1"
+    },
+    {
+      "previous_path": "assets/images/673a9.png",
+      "path": "assets/images/artists/concert-couple.png",
+      "sha256": "bccf261b7dc16513aa84acdbd35bc36905b364641b0374a860b8ab905d1495a4"
+    },
+    {
+      "previous_path": "assets/images/1d03e.png",
+      "path": "assets/images/artists/motion-portrait.png",
+      "sha256": "1866593d74cafa45ae241b3ffbe2edb6caed99fc11ecaa35f0a2f3031ad074d9"
+    },
+    {
+      "previous_path": "assets/images/01044.png",
+      "path": "assets/images/schedule/headliner-01-sunset.png",
+      "sha256": "93bed9ca33b2d57ed20894f0f2bf25166f687a95600b8c7ec9becc40f2124aec"
+    },
+    {
+      "previous_path": "assets/images/59cbf.png",
+      "path": "assets/images/schedule/headliner-02-dancer.png",
+      "sha256": "8394fe6dccc60cf6a9a48176e241561ad146c3b034cffc5a500affef07511b38"
+    },
+    {
+      "previous_path": "assets/images/4a52d.png",
+      "path": "assets/images/schedule/headliner-03-movement.png",
+      "sha256": "30a0d81a1daf6df7ad2672870aea77f488e69b2e3138539090a5431364db8d30"
+    },
+    {
+      "previous_path": "assets/images/cc2b4.png",
+      "path": "assets/images/updates/festival-crowd.png",
+      "sha256": "05ca524d4bd830645b994b54825c0255d31db147fb66225b5f7028dc5b950d9b"
+    },
+    {
+      "previous_path": "assets/images/40305.png",
+      "path": "assets/images/updates/artist-portrait.png",
+      "sha256": "567df65a27f93a4a5baccaf1ffeede037713c5f5973288d464c2a989780b4ded"
+    },
+    {
+      "previous_path": "assets/images/a5866.png",
+      "path": "assets/images/updates/concert-crowd.png",
+      "sha256": "5381e58021a502e0e8ca207fa44f613d4215f4aa23793001e9bc43f0644dc7f8"
+    },
+    {
+      "previous_path": "assets/icons/d5cc4.svg",
+      "path": "assets/images/ticket-frame.svg",
+      "sha256": "de98ec0010d26229160c536c20ddea9fa6a79900537bbeeef2dffdb7a70438cd"
+    },
+    {
+      "previous_path": "assets/icons/c8ec7.svg",
+      "path": "assets/icons/ticket-dot.svg",
+      "sha256": "1bf19f895392281334b087c3a93cb5256b392a9db4cd957851233a9e7163c060"
+    },
+    {
+      "previous_path": "assets/icons/23c4a.svg",
+      "path": "assets/icons/ticket-dots.svg",
+      "sha256": "e8413e7cfb27eb365cf9679bbb566ba3eafe08fb05ea3021ecf3366b6a6525c5"
+    },
+    {
+      "previous_path": "assets/icons/experience-indicators.svg",
+      "path": "assets/icons/experiences-indicators.svg",
+      "sha256": "2fc29b42be6a1c680eb090149a914e1beb2ff11fa710f548c8e4911860710fbf"
+    },
+    {
+      "previous_path": "assets/icons/f45f9.svg",
+      "path": "assets/icons/experience-indicator-light.svg",
+      "sha256": "271f9af6896e6aee6c4afd22da723b13488de21870ab098ecc22f40f0d9834c5"
+    },
+    {
+      "previous_path": "assets/icons/16c88.svg",
+      "path": "assets/icons/experience-indicator-dark.svg",
+      "sha256": "b66a849024149b665c91af9aa0ea6731de30d96be81d0ea959bf19caf4b81b08"
+    },
+    {
+      "previous_path": "assets/icons/2641a.svg",
+      "path": "assets/images/updates-ruler.svg",
+      "sha256": "02235fd0f5f7eb9c55cd2f1669305a5ec6d8f5bb70bb5a0827de7407130c46f8"
+    },
+    {
+      "previous_path": "assets/icons/80d8d.svg",
+      "path": "assets/images/mantserra-wordmark.svg",
+      "sha256": "5a6a10c3c6ac0a9c3f8c32ef4fabe88e51ff93d3895e40e17c52734ce0f465e7"
+    },
+    {
+      "previous_path": "assets/icons/heading-387.svg",
+      "path": "assets/images/experiences-introduction.svg",
+      "sha256": "c6deb1dafe07652e6773568761ac3ea63c8d07c22d7ea7cd4248c709089010f0"
+    },
+    {
+      "previous_path": "assets/icons/heading-431.svg",
+      "path": "assets/images/artists-feature.svg",
+      "sha256": "4c835adfc430c66fe607b0c431d229b704292a144d373e4323c75618242a9dca"
+    },
+    {
+      "previous_path": "assets/icons/heading-463.svg",
+      "path": "assets/images/schedule-showcase.svg",
+      "sha256": "abf7c22afaa842bf2dad91640a2bae669eb664308f36bb9f1f17e3e5847ae8c3"
+    },
+    {
+      "previous_path": "assets/icons/heading-540.svg",
+      "path": "assets/images/updates-announcement.svg",
+      "sha256": "8c02b761cd983bc74edb54a668bb0018a98e26a55af9e6792b105de83658a682"
+    },
+    {
+      "previous_path": "assets/fonts/inter-LICENSE.txt",
+      "path": "assets/fonts/inter-font-license.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "previous_path": "assets/fonts/instrument-serif-OFL.txt",
+      "path": "assets/fonts/instrument-serif-license.txt",
+      "sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521"
+    },
+    {
+      "previous_path": "assets/images/schedule/opening-01.png",
+      "path": "assets/images/schedule/opening-01-singer.png",
+      "sha256": "8dd0b2d3ddc930869e308896de1aa9134a19e0fa4cc9265ad6a7f7df644a5a74"
+    },
+    {
+      "previous_path": "assets/images/schedule/opening-02.png",
+      "path": "assets/images/schedule/opening-02-synthesizer.png",
+      "sha256": "b5b4917909938e7b843bd615f13d1410db25533cb4e075e4fdd8c229e4d2e4fb"
+    },
+    {
+      "previous_path": "assets/images/schedule/opening-03.png",
+      "path": "assets/images/schedule/opening-03-crowd.png",
+      "sha256": "48a2aaf43d1125b8d321d2b7dc903a4035a42a6833b3601e47fc5514cd4f1990"
+    },
+    {
+      "previous_path": "assets/images/schedule/late-night-01.png",
+      "path": "assets/images/schedule/late-night-01-dj.png",
+      "sha256": "169c734bcba72a864ed6ecace5203b639fef7523df71881fabe1270dc708d5da"
+    },
+    {
+      "previous_path": "assets/images/schedule/late-night-02.png",
+      "path": "assets/images/schedule/late-night-02-dancer.png",
+      "sha256": "84fa958b19074525149c3d1c05d0d6ee95408966ce6af89a3fe369b0034d7aca"
+    },
+    {
+      "previous_path": "assets/images/schedule/late-night-03.png",
+      "path": "assets/images/schedule/late-night-03-crowd.png",
+      "sha256": "569407b54ccddc996ea59710e2da27bd33ec3e1da0155e5f302de4cb0074d716"
+    },
+    {
+      "previous_path": "assets/images/schedule/closing-01.png",
+      "path": "assets/images/schedule/closing-01-vocalist.png",
+      "sha256": "c508db1898f26491da08286986c178f1549372d7bacc5275ec24343dc2e3c48d"
+    },
+    {
+      "previous_path": "assets/images/schedule/closing-02.png",
+      "path": "assets/images/schedule/closing-02-drummer.png",
+      "sha256": "97c83bce32d383e649216b46e6c7935101b43df477a6d2770fda0fa30e0c79cb"
+    },
+    {
+      "previous_path": "assets/images/schedule/closing-03.png",
+      "path": "assets/images/schedule/closing-03-crowd.png",
+      "sha256": "23dfb0d2802c6e23bdf3c26b5a9c321233674937e9e32b1a468e1c4233ed55b5"
+    }
+  ],
+  "css_replacements": [
+    {
+      "previous_path": "assets/icons/ae8f8.svg",
+      "removed_path": "assets/dividers/experiences-divider.svg",
+      "sha256": "91f6ceee5617185e93e132ec903f5fa921702a07768b28d53906cfa3f1462b88",
+      "replacement": ".experiences__divider"
+    },
+    {
+      "previous_path": "assets/icons/66b07.svg",
+      "removed_path": "assets/dividers/section-rail-left.svg",
+      "sha256": "dc55e972a0da1de4fa43eb0bfb2cb2be6149375e4b678fe2374f54c18fe53d81",
+      "replacement": ".artist::before, .artist::after, .schedule__rails::before"
+    },
+    {
+      "previous_path": "assets/icons/dbeac.svg",
+      "removed_path": "assets/dividers/section-rail-right.svg",
+      "sha256": "43c56f14ceda4eacb4bb7c3f1f6278bceae936d9e2c56dab9e5ff91275f40826",
+      "replacement": ".schedule__rails::after"
+    },
+    {
+      "previous_path": "assets/icons/507bc.svg",
+      "removed_path": "assets/dividers/schedule-divider.svg",
+      "sha256": "44c9e25c2bc4a0bfb843d97d941d54cf68d2af3e8bf2886f0c9507c853849e22",
+      "replacement": ".schedule__heading-row, .schedule__item, .schedule__panel"
+    },
+    {
+      "previous_path": "assets/icons/35bea.svg",
+      "removed_path": "assets/dividers/footer-contact-divider.svg",
+      "sha256": "2e269de2adf4f42ef624c729567345579dd4b623978c8f62a1f0cf1cf96059e4",
+      "replacement": ".contact__divider"
+    },
+    {
+      "previous_path": "assets/icons/c8650.svg",
+      "removed_path": "assets/images/updates-tick.svg",
+      "sha256": "11869f6e4670b2f08734fc867ea9f280df7cba882d0a1f1898df0349d02960ef",
+      "replacement": ".updates__tick"
+    }
+  ]
+}

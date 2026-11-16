@@ -37,16 +37,33 @@
           <p class="hero__ghost">Laude <em>Simmons</em></p>
         </div>
         <p class="hero__introduction">Belgian festies have descended <em>4-day tribute to rock, pop, and everything loud.</em></p>
-        <div class="hero__ticket-stage">
-          <article class="ticket" aria-label="Brookly Simmons Concert, 16 April, 04:30 PM, £325">
-            <div class="ticket__window" aria-hidden="true"></div>
-            <img class="ticket__shape" src="./assets/images/ticket-frame.svg" width="413" height="575" alt="" />
-            <p class="ticket__date"><span>04:30 PM</span><span>16 APR</span></p>
-            <img class="ticket__dot" src="./assets/icons/ticket-dot.svg" width="26" height="26" alt="" />
-            <img class="ticket__dots" src="./assets/icons/ticket-dots.svg" width="52" height="26" alt="" />
-            <h2 class="ticket__name">Brookly<br />Simmons Concert</h2>
-            <span class="ticket__price">£325</span>
-          </article>
+        <div class="hero__ticket-stage" data-ticket-tilt>
+          <div class="ticket-motion" data-ticket-tilt-surface>
+            <div class="ticket-motion__flip" data-ticket-flip-surface>
+              <article data-ticket-front class="ticket" aria-label="Brookly Simmons Concert, 16 April, 04:30 PM, £325">
+                <div class="ticket__window" aria-hidden="true"></div>
+                <img class="ticket__shape" src="./assets/images/ticket-frame.svg" width="413" height="575" alt="" />
+                <p class="ticket__date"><span>04:30 PM</span><span>16 APR</span></p>
+                <img class="ticket__dot" src="./assets/icons/ticket-dot.svg" width="26" height="26" alt="" />
+                <img class="ticket__dots" src="./assets/icons/ticket-dots.svg" width="52" height="26" alt="" />
+                <h2 class="ticket__name">Brookly<br />Simmons Concert</h2>
+                <span class="ticket__price">£325</span>
+              </article>
+              <article class="ticket ticket-back" data-ticket-back hidden>
+                <div class="ticket-back__header">
+                  <img class="ticket-back__cover" src="./assets/images/hero/concert-crowd.png" width="72" height="88" alt="" />
+                  <div><p class="ticket-back__eyebrow">MANT SERRA / LIVE</p><h3>Brookly<br /><em>Simmons Concert</em></h3><p class="ticket-back__date">16 APR · 04:30 PM</p></div>
+                </div>
+                <p class="ticket-back__label">THE CONCERT EDIT <span>PRICE</span></p>
+                <ol class="ticket-back__list">
+                  <li><span class="ticket-back__number">01</span><span>Brookly Simmons<small>16 April · Concert</small></span><span>£325</span></li>
+                  <li><span class="ticket-back__number">02</span><span>Samantha dè Lauretta<small>28 March · Concert</small></span><span class="ticket-back__sold">Sold out</span></li>
+                </ol>
+                <div class="ticket-back__footer"><span>Mantserra</span><span>Music, art<br />&amp; atmosphere.</span></div>
+              </article>
+            </div>
+          </div>
+          <button class="ticket-flip-toggle" type="button" data-ticket-flip aria-pressed="false" aria-label="Show ticket details for Brookly Simmons Concert" hidden></button>
         </div>
         <div class="hero__bottom">
           <p class="hero__caption">Quality Digital<br />Goods For Sale</p>
@@ -113,16 +130,33 @@
           <div class="artist__metadata"><p>American Football</p><span>001</span></div>
           <div class="artist__portrait" data-reveal>
             <img class="artist__photo" src="./assets/images/artists/concert-couple.png" width="1808" height="2400" alt="Two concertgoers in warm amber light" loading="lazy" />
-            <div class="artist__ticket-stage">
-              <article class="ticket ticket--clear" aria-label="Samantha dè Lauretta Concert, 28 March, 05:20 PM, sold out">
-                <div class="ticket__window" aria-hidden="true"></div>
-                <img class="ticket__shape" src="./assets/images/ticket-frame.svg" width="413" height="575" alt="" />
-                <p class="ticket__date"><span>05:20 PM</span><span>28 MAR</span></p>
-                <img class="ticket__dot" src="./assets/icons/ticket-dot.svg" width="26" height="26" alt="" />
-                <img class="ticket__dots" src="./assets/icons/ticket-dots.svg" width="52" height="26" alt="" />
-                <h3 class="ticket__name">Samantha<br />dè Lauretta Concert</h3>
-                <span class="ticket__price">Sold out</span>
-              </article>
+            <div class="artist__ticket-stage" data-ticket-tilt>
+              <div class="ticket-motion" data-ticket-tilt-surface>
+                <div class="ticket-motion__flip" data-ticket-flip-surface>
+                  <article data-ticket-front class="ticket ticket--clear" aria-label="Samantha dè Lauretta Concert, 28 March, 05:20 PM, sold out">
+                    <div class="ticket__window" aria-hidden="true"></div>
+                    <img class="ticket__shape" src="./assets/images/ticket-frame.svg" width="413" height="575" alt="" />
+                    <p class="ticket__date"><span>05:20 PM</span><span>28 MAR</span></p>
+                    <img class="ticket__dot" src="./assets/icons/ticket-dot.svg" width="26" height="26" alt="" />
+                    <img class="ticket__dots" src="./assets/icons/ticket-dots.svg" width="52" height="26" alt="" />
+                    <h3 class="ticket__name">Samantha<br />dè Lauretta Concert</h3>
+                    <span class="ticket__price">Sold out</span>
+                  </article>
+                  <article class="ticket ticket-back" data-ticket-back hidden>
+                    <div class="ticket-back__header">
+                      <img class="ticket-back__cover" src="./assets/images/artists/concert-couple.png" width="72" height="88" alt="" />
+                      <div><p class="ticket-back__eyebrow">MANT SERRA / LIVE</p><h3>Samantha<br /><em>dè Lauretta Concert</em></h3><p class="ticket-back__date">28 MAR · 05:20 PM</p></div>
+                    </div>
+                    <p class="ticket-back__label">THE CONCERT EDIT <span>PRICE</span></p>
+                    <ol class="ticket-back__list">
+                      <li><span class="ticket-back__number">01</span><span>Brookly Simmons<small>16 April · Concert</small></span><span>£325</span></li>
+                      <li><span class="ticket-back__number">02</span><span>Samantha dè Lauretta<small>28 March · Concert</small></span><span class="ticket-back__sold">Sold out</span></li>
+                    </ol>
+                    <div class="ticket-back__footer"><span>Mantserra</span><span>Music, art<br />&amp; atmosphere.</span></div>
+                  </article>
+                </div>
+              </div>
+              <button class="ticket-flip-toggle" type="button" data-ticket-flip aria-pressed="false" aria-label="Show ticket details for Samantha dè Lauretta Concert" hidden></button>
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ import { initMotion } from '../interactions/reveal.js';
 import { initRulerScroll } from '../interactions/ruler-scroll.js';
 import { initUpdates } from '../sections/updates.js';
 import { initSectionOverlaps } from '../interactions/section-overlap.js';
+import { initTicketTilt } from '../interactions/ticket-tilt.js';
 
 export class LandingPage {
   constructor(root) {
@@ -30,6 +31,7 @@ export class LandingPage {
       initExperiences(this.root.querySelector('[data-experiences]'), services),
       initSchedule(this.root.querySelector('[data-schedule]'), services),
       initTickets(this.root),
+      initTicketTilt(this.root, services),
       initContact(this.root.querySelector('[data-contact]')),
       initMotion(this.root, services),
       initSectionOverlaps(this.root, services),

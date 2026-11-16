@@ -64,14 +64,22 @@
         </h2>
         <div class="experiences__divider" aria-hidden="true"></div>
         <div class="experiences__event" data-experience-event>
-          <div class="experiences__gallery" data-reveal>
-            <img class="experiences__image" src="./assets/images/experiences/blue-light-artist.png" width="992" height="1200" alt="Artist beneath cool blue concert lights" loading="lazy" />
+          <div class="experiences__gallery" data-reveal data-experience-gallery>
+            <div class="experiences__ticket-image">
+              <img class="experiences__image" src="./assets/images/experiences/blue-light-artist.png" width="992" height="1200" alt="Artist beneath cool blue concert lights" loading="lazy" />
+              <button class="experiences__ticket-button" type="button" data-ticket-open data-ticket-event="experience">Get ticket</button>
+            </div>
             <div class="experiences__ticket-image">
               <img class="experiences__image experiences__image--close" src="./assets/images/experiences/amber-live-performer.png" width="1984" height="2400" alt="Live performer in a wash of warm orange light" loading="lazy" />
               <button class="experiences__ticket-button" type="button" data-ticket-open data-ticket-event="experience">Get ticket</button>
             </div>
-            <div class="experiences__empty-image" aria-hidden="true"></div>
-            <img class="experiences__image" src="./assets/images/experiences/crowd-portrait.png" width="904" height="1200" alt="Blurred portrait in a crowd at dusk" loading="lazy" />
+            <div class="experiences__ticket-image experiences__empty-image">
+              <button class="experiences__ticket-button" type="button" data-ticket-open data-ticket-event="experience">Get ticket</button>
+            </div>
+            <div class="experiences__ticket-image">
+              <img class="experiences__image" src="./assets/images/experiences/crowd-portrait.png" width="904" height="1200" alt="Blurred portrait in a crowd at dusk" loading="lazy" />
+              <button class="experiences__ticket-button" type="button" data-ticket-open data-ticket-event="experience">Get ticket</button>
+            </div>
           </div>
           <div class="experiences__information">
             <div class="experiences__identity"><div class="metadata"><span>Experiences</span><span>24 MAR</span></div><h3>Simmons Wellington</h3></div>
@@ -81,7 +89,7 @@
             </div>
           </div>
         </div>
-        <p class="experiences__empty-state" data-empty-state role="status" hidden>No experiences listed in this category yet.</p>
+        <p class="u-sr-only" data-filter-status role="status" aria-live="polite" aria-atomic="true"></p>
         <div class="experiences__bottom">
           <div class="experiences__filters" role="group" aria-label="Filter experiences" data-filters>
             <div class="experiences__filter-row">
@@ -202,16 +210,70 @@
         </div>
       </section>
       <!-- Editorial updates · Figma 3915:508 -->
-      <section class="updates" id="updates" aria-labelledby="updates-title">
-        <div class="updates__ruler" aria-hidden="true"><img src="./assets/images/updates-ruler.svg" width="2314" height="38.5938" alt="" /></div>
+      <section class="updates" id="updates" aria-labelledby="updates-title" data-updates>
+        <div class="updates__ruler" aria-hidden="true" data-ruler><img src="./assets/images/updates-ruler.svg" width="2314" height="38.5938" alt="" data-ruler-track /></div>
         <div class="updates__top layout-container"><p>Be the first to hear about lineup drops.</p><p>Exclusive access, and limited releases.</p></div>
         <div class="updates__heading-group" data-reveal><p class="updates__eyebrow">( Stay in the Loop )</p><h2 class="updates__heading art-heading" id="updates-title"><span class="u-sr-only">Be the first to know about lineup drops, exclusive access, and special releases.</span><span class="art-heading__visual art-heading__visual--updates" aria-hidden="true"></span></h2></div>
         <span class="updates__tick" aria-hidden="true"></span>
-        <div class="updates__grid">
-          <figure class="updates__story"><figcaption class="metadata"><span>Festival</span><span>24 MAR</span></figcaption><img src="./assets/images/updates/festival-crowd.png" width="800" height="1200" alt="Crowd in motion at a music festival" loading="lazy" /></figure>
-          <figure class="updates__story"><figcaption class="metadata"><span>Festival</span><span>28 MAR</span></figcaption><img src="./assets/images/updates/artist-portrait.png" width="1200" height="673" alt="Portrait of a festival artist" loading="lazy" /></figure>
-          <article class="updates__article"><div><div class="metadata"><span>Festival</span><span>2 APR</span></div><h3>Music Festivals<br />Cancelled In 2026</h3></div><p>The Music Festival Wizard team will be keeping tabs on which festivals have been cancelled and whenever possible, we will add the official statement from the organizers. This article will be updated continuously over the year.</p></article>
-          <figure class="updates__story"><figcaption class="metadata"><span>Festival</span><span>8 APR</span></figcaption><img src="./assets/images/updates/concert-crowd.png" width="904" height="1200" alt="A concertgoer surrounded by a moving crowd" loading="lazy" /></figure>
+        <div class="updates__viewport" data-updates-viewport>
+          <div class="updates__grid" data-updates-track>
+            <article class="updates__story" tabindex="0" aria-labelledby="update-1-title">
+              <div class="updates__metadata metadata"><span>Festival</span><span>24 MAR</span></div>
+              <div class="updates__visual">
+                <img src="./assets/images/updates/festival-crowd.png" width="800" height="1200" alt="Crowd in motion at a music festival" loading="lazy" />
+                <div class="updates__article"><h3 id="update-1-title">Festival Atmosphere</h3><p>A celebration of music, art, and atmosphere. Explore the energy of live performances, shared moments, and the people who make the festival experience.</p></div>
+              </div>
+            </article>
+            <article class="updates__story" tabindex="0" aria-labelledby="update-2-title">
+              <div class="updates__metadata metadata"><span>Festival</span><span>28 MAR</span></div>
+              <div class="updates__visual">
+                <img src="./assets/images/updates/artist-portrait.png" width="1200" height="673" alt="Portrait of a festival artist" loading="lazy" />
+                <div class="updates__article"><h3 id="update-2-title">Behind the Sound</h3><p>Discover the artists behind the music. A space for creative expression, individual perspectives, and the sounds that bring people together.</p></div>
+              </div>
+            </article>
+            <article class="updates__story" tabindex="0" aria-labelledby="update-3-title">
+              <div class="updates__metadata metadata"><span>Festival</span><span>2 APR</span></div>
+              <div class="updates__visual">
+                <img src="./assets/images/schedule/headliner-01-sunset.png" width="820" height="1024" alt="Performer silhouetted against sunset stage lighting" loading="lazy" />
+                <div class="updates__article"><h3 id="update-3-title">Music Festivals<br />Cancelled In 2026</h3><p>The Music Festival Wizard team will be keeping tabs on which festivals have been cancelled and whenever possible, we will add the official statement from the organizers. This article will be updated continuously over the year.</p></div>
+              </div>
+            </article>
+            <article class="updates__story" tabindex="0" aria-labelledby="update-4-title">
+              <div class="updates__metadata metadata"><span>Festival</span><span>8 APR</span></div>
+              <div class="updates__visual">
+                <img src="./assets/images/updates/concert-crowd.png" width="904" height="1200" alt="A concertgoer surrounded by a moving crowd" loading="lazy" />
+                <div class="updates__article"><h3 id="update-4-title">Inside the Crowd</h3><p>Experience live music through the crowd. From the first notes to the final moments, discover the movement, connection, and atmosphere of a shared performance.</p></div>
+              </div>
+            </article>
+            <article class="updates__story" tabindex="0" aria-labelledby="update-5-title">
+              <div class="updates__metadata metadata"><span>Festival</span><span>12 APR</span></div>
+              <div class="updates__visual">
+                <img src="./assets/images/experiences/blue-light-artist.png" width="992" height="1200" alt="Artist beneath blue stage lights" loading="lazy" />
+                <div class="updates__article"><h3 id="update-5-title">Under the Lights</h3><p>Light, sound, and movement come together on stage. Explore the atmosphere of live music through expressive moments and changing perspectives.</p></div>
+              </div>
+            </article>
+            <article class="updates__story" tabindex="0" aria-labelledby="update-6-title">
+              <div class="updates__metadata metadata"><span>Festival</span><span>16 APR</span></div>
+              <div class="updates__visual">
+                <img src="./assets/images/artists/concert-couple.png" width="1808" height="2400" alt="Two concertgoers in warm light" loading="lazy" />
+                <div class="updates__article"><h3 id="update-6-title">Shared Moments</h3><p>Music creates space for connection. A glimpse of the people, energy, and shared experiences that surround every live performance.</p></div>
+              </div>
+            </article>
+            <article class="updates__story" tabindex="0" aria-labelledby="update-7-title">
+              <div class="updates__metadata metadata"><span>Festival</span><span>20 APR</span></div>
+              <div class="updates__visual">
+                <img src="./assets/images/artists/motion-portrait.png" width="992" height="1200" alt="Artist portrait with motion blur" loading="lazy" />
+                <div class="updates__article"><h3 id="update-7-title">Creative Perspectives</h3><p>An exploration of music and visual expression. Discover the textures, movement, and individual perspectives that shape the festival atmosphere.</p></div>
+              </div>
+            </article>
+            <article class="updates__story" tabindex="0" aria-labelledby="update-8-title">
+              <div class="updates__metadata metadata"><span>Festival</span><span>24 APR</span></div>
+              <div class="updates__visual">
+                <img src="./assets/images/experiences/crowd-portrait.png" width="904" height="1200" alt="Portrait amid a moving crowd" loading="lazy" />
+                <div class="updates__article"><h3 id="update-8-title">After the Last Note</h3><p>The atmosphere of a performance stays with us beyond the stage. Explore the faces and moments that give live music its lasting character.</p></div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>

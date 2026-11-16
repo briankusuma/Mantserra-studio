@@ -7,6 +7,8 @@ import { initSchedule } from '../sections/schedule.js';
 import { initTickets } from '../interactions/tickets.js';
 import { initContact } from '../interactions/contact.js';
 import { initMotion } from '../interactions/reveal.js';
+import { initRulerScroll } from '../interactions/ruler-scroll.js';
+import { initUpdates } from '../sections/updates.js';
 
 export class LandingPage {
   constructor(root) {
@@ -29,6 +31,8 @@ export class LandingPage {
       initTickets(this.root),
       initContact(this.root.querySelector('[data-contact]')),
       initMotion(this.root, services),
+      initRulerScroll(this.root.querySelector('[data-updates]'), services),
+      initUpdates(this.root.querySelector('[data-updates]'), services),
     ];
     this.media = gsap.matchMedia();
     this.media.add('(prefers-reduced-motion: no-preference)', () => {

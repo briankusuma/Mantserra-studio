@@ -453,6 +453,11 @@ button.pill:hover, .pill--active {
   position: relative;
 }
 
+.experiences__empty-image {
+  border: 1px solid #1a1919;
+  background: #000;
+}
+
 .experiences__image--close {
   position: absolute;
   width: 118.97%;
@@ -460,10 +465,6 @@ button.pill:hover, .pill--active {
   max-width: none;
   left: -19.09%;
   top: -30.32%;
-}
-
-.experiences__empty-image {
-  border: 1px solid #1a1919;
 }
 
 .experiences__ticket-button {
@@ -487,6 +488,25 @@ button.pill:hover, .pill--active {
 
 .experiences__ticket-button:hover {
   background: rgb(255 255 255 / 20%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experiences__ticket-button {
+    opacity: 0;
+    filter: blur(12px);
+    pointer-events: none;
+    transition:
+      opacity 750ms cubic-bezier(.22, 1, .36, 1),
+      filter 750ms cubic-bezier(.22, 1, .36, 1),
+      background-color 250ms ease;
+  }
+
+  .experiences__ticket-image:hover .experiences__ticket-button,
+  .experiences__ticket-image:focus-within .experiences__ticket-button {
+    opacity: 1;
+    filter: blur(0);
+    pointer-events: auto;
+  }
 }
 
 .experiences__information {
@@ -570,13 +590,6 @@ button.pill:hover, .pill--active {
 
 .experiences__swatches span:last-child {
   background: #fff;
-}
-
-.experiences__empty-state {
-  min-height: 465px;
-  padding-top: 120px;
-  font-size: 24px;
-  color: rgb(255 255 255 / 70%);
 }
 
 .artist {
@@ -955,24 +968,39 @@ button.pill:hover, .pill--active {
   left: calc(75% + 32px);
 }
 
+.updates__viewport {
+  width: 100%;
+  margin-top: 160px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.updates__viewport--pinned {
+  overflow: hidden;
+}
+
 .updates__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100vw - 36px) / 4);
   gap: 12px;
-  width: calc(100% + 36px);
-  margin-top: 160px;
-  margin-left: -22px;
+  width: max-content;
 }
 
 .updates__story {
   min-width: 0;
 }
 
-.updates__story figcaption {
+.updates__metadata {
   margin: 0 32px 24px;
 }
 
-.updates__story > img {
+.updates__visual {
+  position: relative;
+  border-radius: 8px;
+}
+
+.updates__visual > img {
   width: 100%;
   height: 426px;
   object-fit: cover;
@@ -984,7 +1012,7 @@ button.pill:hover, .pill--active {
   flex-direction: column;
   justify-content: space-between;
   min-width: 0;
-  padding: 41px 22px 0;
+  padding: 24px 22px 0;
   font-family: 'Inter Display', sans-serif;
 }
 
@@ -1000,6 +1028,41 @@ button.pill:hover, .pill--active {
   line-height: 1.4;
   letter-spacing: -.72px;
   color: rgb(255 255 255 / 70%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .updates__metadata {
+    transition: opacity 750ms ease;
+  }
+
+  .updates__story:is(:hover, :focus-within) .updates__metadata {
+    opacity: 0;
+  }
+
+  .updates__article {
+    position: absolute;
+    inset: 0;
+    padding-top: 0;
+    opacity: 0;
+    filter: blur(8px);
+    pointer-events: none;
+    transition: opacity 750ms ease, filter 750ms ease;
+  }
+
+  .updates__visual > img {
+    transition: opacity 750ms ease, filter 750ms ease;
+  }
+
+  .updates__story:is(:hover, :focus-within) .updates__visual > img {
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  .updates__story:is(:hover, :focus-within) .updates__article {
+    opacity: 1;
+    filter: blur(0);
+    pointer-events: auto;
+  }
 }
 
 .site-footer {
@@ -1435,19 +1498,22 @@ button.pill:hover, .pill--active {
     padding-bottom: 64px;
   }
 
-  .updates__grid {
-    grid-template-columns: 1fr 1fr;
-    width: auto;
+  .updates__viewport {
+    width: calc(100% - 48px);
     margin-inline: 24px;
     margin-top: 100px;
-    gap: 40px 16px;
   }
 
-  .updates__story figcaption {
+  .updates__grid {
+    grid-auto-columns: calc((100vw - 64px) / 2);
+    gap: 16px;
+  }
+
+  .updates__metadata {
     margin-inline: 0;
   }
 
-  .updates__story > img {
+  .updates__visual > img {
     height: auto;
     aspect-ratio: 360 / 426;
   }
@@ -1788,16 +1854,21 @@ button.pill:hover, .pill--active {
     display: none;
   }
 
-  .updates__grid {
+  .updates__viewport {
+    width: calc(100% - 40px);
     margin-inline: 20px;
     margin-top: 64px;
   }
 
-  .updates__story figcaption, .updates__article .metadata {
+  .updates__grid {
+    grid-auto-columns: calc(100vw - 40px);
+  }
+
+  .updates__metadata {
     font-size: 10px;
   }
 
-  .updates__story figcaption {
+  .updates__metadata {
     margin-bottom: 16px;
   }
 
@@ -1853,9 +1924,41 @@ button.pill:hover, .pill--active {
 
 }
 
+@media (max-width: 760px) {
+  .updates__visual > img {
+    height: 260px;
+    aspect-ratio: auto;
+  }
+
+  .updates__story .updates__article {
+    position: static;
+    padding-top: 16px;
+    opacity: 1;
+    filter: none;
+    pointer-events: auto;
+  }
+
+  .updates__story:is(:hover, :focus-within) .updates__visual > img {
+    opacity: 1;
+    filter: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     scroll-behavior: auto !important;
+  }
+
+  .experiences__ticket-button {
+    transition: none;
+    filter: none;
+  }
+
+  .updates__article,
+  .updates__metadata,
+  .updates__visual > img {
+    transition: none;
+    filter: none;
   }
 
 }

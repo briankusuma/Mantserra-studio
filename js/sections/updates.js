@@ -13,7 +13,7 @@ export function initUpdates(root, { gsap }) {
       ease: 'none',
       scrollTrigger: {
         trigger: viewport,
-        start: 'top 24px',
+        start: 'center center',
         end: () => `+=${Math.max(1, distance())}`,
         pin: true,
         pinSpacing: true,

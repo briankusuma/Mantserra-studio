@@ -9,6 +9,7 @@ import { initContact } from '../interactions/contact.js';
 import { initMotion } from '../interactions/reveal.js';
 import { initRulerScroll } from '../interactions/ruler-scroll.js';
 import { initUpdates } from '../sections/updates.js';
+import { initSectionOverlaps } from '../interactions/section-overlap.js';
 
 export class LandingPage {
   constructor(root) {
@@ -31,6 +32,7 @@ export class LandingPage {
       initTickets(this.root),
       initContact(this.root.querySelector('[data-contact]')),
       initMotion(this.root, services),
+      initSectionOverlaps(this.root, services),
       initRulerScroll(this.root.querySelector('[data-updates]'), services),
       initUpdates(this.root.querySelector('[data-updates]'), services),
     ];

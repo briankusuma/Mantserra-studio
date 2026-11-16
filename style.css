@@ -1452,6 +1452,10 @@ button.pill:hover, .pill--active {
 }
 
 @media (max-width: 1200px) {
+  .hero {
+    min-height: 1100px;
+  }
+
   .site-header__menu {
     gap: clamp(24px, 4vw, 48px);
   }
@@ -1463,7 +1467,7 @@ button.pill:hover, .pill--active {
   }
 
   .hero__ticket-stage {
-    top: 240px;
+    top: 300px;
   }
 
   .experiences__ticket-button {
@@ -1766,7 +1770,7 @@ button.pill:hover, .pill--active {
 
   .hero__introduction {
     top: 120px;
-    width: 295px;
+    width: min(295px, calc(100% - 40px));
     font-size: 28px;
     line-height: 30px;
   }
@@ -1788,6 +1792,27 @@ button.pill:hover, .pill--active {
     transform-origin: top left;
   }
 
+  .ticket-back__header h3 {
+    font-size: 28px;
+  }
+
+  .ticket-back__list li {
+    font-size: 22px;
+  }
+
+  .ticket-back__eyebrow,
+  .ticket-back__date,
+  .ticket-back__label {
+    font-size: 14px;
+  }
+
+  .ticket-back__number,
+  .ticket-back__list small,
+  .ticket-back__sold,
+  .ticket-back__footer > :last-child {
+    font-size: 16px;
+  }
+
   .hero__bottom {
     display: block;
     left: 20px;
@@ -1806,7 +1831,7 @@ button.pill:hover, .pill--active {
   }
 
   .hero__title {
-    font-size: clamp(64px, 15.7vw, 112px);
+    font-size: clamp(52px, 15.7vw, 112px);
     align-self: center;
   }
 
@@ -2065,7 +2090,7 @@ button.pill:hover, .pill--active {
   }
 
   .site-footer__content {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     margin-top: 64px;
     gap: 48px;
   }
@@ -2076,6 +2101,8 @@ button.pill:hover, .pill--active {
 
   .site-footer__description {
     grid-row: 1;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .site-footer__heading {
@@ -2085,6 +2112,8 @@ button.pill:hover, .pill--active {
 
   .contact {
     grid-row: 3;
+    min-width: 0;
+    width: 100%;
     margin-top: 0;
   }
 
@@ -2115,6 +2144,59 @@ button.pill:hover, .pill--active {
   .updates__story:is(:hover, :focus-within) .updates__visual > img {
     opacity: 1;
     filter: none;
+  }
+}
+
+@media (max-width: 1023px), (pointer: coarse) {
+  .updates__viewport {
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    padding-bottom: 16px;
+  }
+
+  .updates__story {
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule__information {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 20px;
+  }
+
+  .artist__details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .artist__secondary-photo {
+    width: 70%;
+    margin-left: auto;
+  }
+
+  .site-header__toggle,
+  .site-header__tickets {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 359px) {
+  .hero__ticket-stage {
+    width: 280px;
+    height: 390px;
+  }
+
+  .hero__ticket-stage .ticket {
+    transform: scale(.678);
+  }
+
+  .artist__ticket-stage {
+    width: 260px;
+    height: 362px;
+  }
+
+  .artist__ticket-stage .ticket {
+    transform: scale(.6295);
   }
 }
 

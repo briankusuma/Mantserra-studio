@@ -3,7 +3,7 @@ export function initSectionOverlaps(root, { gsap }) {
   if (!sections.length) return () => {};
 
   const media = gsap.matchMedia();
-  media.add('(prefers-reduced-motion: no-preference)', () => {
+  media.add('(min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', () => {
     for (const section of sections) {
       const previous = section.previousElementSibling;
       if (!previous) continue;

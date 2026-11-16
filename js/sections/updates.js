@@ -4,7 +4,7 @@ export function initUpdates(root, { gsap }) {
   if (!track) return () => {};
 
   const media = gsap.matchMedia();
-  media.add('(prefers-reduced-motion: no-preference)', () => {
+  media.add('(min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', () => {
     const distance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
     viewport.classList.add('updates__viewport--pinned');
     viewport.scrollLeft = 0;

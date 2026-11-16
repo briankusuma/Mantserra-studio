@@ -99,7 +99,8 @@ export function initTicketTilt(root, { gsap }) {
         const options = { duration: .65, ease: 'power3.out' };
         const rotateX = gsap.quickTo(surface, 'rotationX', options);
         const rotateY = gsap.quickTo(surface, 'rotationY', options);
-        const scale = gsap.quickTo(surface, 'scale', options);
+        const scaleX = gsap.quickTo(surface, 'scaleX', options);
+        const scaleY = gsap.quickTo(surface, 'scaleY', options);
         const track = event => {
           if (event.pointerType !== 'mouse') return;
           // Measure the stationary stage to avoid feedback from the rotating surface.
@@ -109,12 +110,14 @@ export function initTicketTilt(root, { gsap }) {
           const y = gsap.utils.clamp(0, 1, (event.clientY - bounds.top) / bounds.height);
           rotateX((.5 - y) * 24);
           rotateY((x - .5) * 24);
-          scale(1.04);
+          scaleX(1.04);
+          scaleY(1.04);
         };
         const reset = () => {
           rotateX(0);
           rotateY(0);
-          scale(1);
+          scaleX(1);
+          scaleY(1);
         };
         stage.addEventListener('pointerenter', track, listenerOptions);
         stage.addEventListener('pointermove', track, listenerOptions);

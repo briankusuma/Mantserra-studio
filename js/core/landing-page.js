@@ -41,7 +41,7 @@ export class LandingPage {
     this.media = gsap.matchMedia();
     this.media.add('(prefers-reduced-motion: no-preference)', () => {
       if (!features.smoothScroll) return;
-      const scroll = new SmoothScroll();
+      const scroll = new SmoothScroll({ root: this.root, requestRefresh: this.requestRefresh });
       scroll.init();
       return () => scroll.destroy();
     });

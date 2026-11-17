@@ -965,6 +965,7 @@ button.pill:hover, .pill--active {
   cursor: pointer;
   list-style: none;
   color: rgb(0 0 0 / 30%);
+  transition: color 250ms ease;
 }
 
 .schedule__summary::-webkit-details-marker {
@@ -1228,10 +1229,11 @@ button.pill:hover, .pill--active {
 }
 
 .site-footer {
+  position: relative;
+  isolation: isolate;
   min-height: 1024px;
   padding-top: 32px;
   padding-bottom: 45px;
-  border-bottom: 1px solid rgb(255 255 255 / 10%);
   overflow: hidden;
 }
 
@@ -1358,6 +1360,61 @@ button.pill:hover, .pill--active {
   background: url('./assets/images/mantserra-wordmark.svg') center / contain no-repeat;
 }
 
+.site-footer__ornament {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 267px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.site-footer__ornament-photo {
+  position: absolute;
+  width: var(--seam-photo-width, 123.542vw);
+  height: var(--seam-photo-height, 1186px);
+  left: var(--seam-photo-left, -10.208vw);
+  top: calc(100% + var(--seam-photo-top, -61px));
+  object-fit: cover;
+  /* Grow upward while keeping the photo row at the hero seam fixed. */
+  transform: scaleY(1.2);
+  transform-origin: 50% calc(-1 * var(--seam-photo-top, -61px));
+}
+
+.site-footer__ornament::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Begin fully black at the photo's actual top edge, not the wrapper's edge. */
+  height: calc(-1.2 * var(--seam-photo-top, -61px));
+  background: linear-gradient(
+    to bottom,
+    #000 0%,
+    rgb(0 0 0 / 98%) 12%,
+    rgb(0 0 0 / 88%) 30%,
+    rgb(0 0 0 / 62%) 52%,
+    rgb(0 0 0 / 28%) 74%,
+    rgb(0 0 0 / 6%) 92%,
+    transparent 100%
+  );
+}
+
+.scroll-loop {
+  position: relative;
+  height: 100vh;
+  overflow: clip;
+  pointer-events: none;
+  overflow-anchor: none;
+}
+
+.scroll-loop .site-header {
+  pointer-events: auto;
+}
+
 .ticket-dialog {
   width: min(560px, calc(100% - 32px));
   max-height: calc(100svh - 48px);
@@ -1424,6 +1481,11 @@ button.pill:hover, .pill--active {
 }
 
 @media (min-width: 1700px) {
+  .site-footer {
+    --seam-photo-height: 1297.184px;
+    --seam-photo-top: -66.718px;
+  }
+
   .hero {
     min-height: 1120px;
   }
@@ -1452,6 +1514,11 @@ button.pill:hover, .pill--active {
 }
 
 @media (max-width: 1200px) {
+  .site-footer {
+    --seam-photo-height: 1274.02px;
+    --seam-photo-top: -65.527px;
+  }
+
   .hero {
     min-height: 1100px;
   }
@@ -1719,6 +1786,13 @@ button.pill:hover, .pill--active {
 }
 
 @media (max-width: 760px) {
+  .site-footer {
+    --seam-photo-width: 180vw;
+    --seam-photo-height: 1135.036px;
+    --seam-photo-left: -40vw;
+    --seam-photo-top: -58.379px;
+  }
+
   :root {
     --gutter: 20px;
   }
@@ -2201,6 +2275,10 @@ button.pill:hover, .pill--active {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .schedule__summary {
+    transition: none;
+  }
+
   .ticket-cursor-tooltip {
     transition: none;
   }

@@ -74,3 +74,15 @@ Verifikasi revisi: empat panel masing-masing memiliki tiga aset lokal non-empty,
 ## Penyederhanaan divider
 
 Lima SVG divider/rail dan satu SVG tick updates diperiksa: semuanya hanya satu path garis lurus. Aset tersebut diganti CSS 1px dengan warna stroke asli (#34393A, #F4E9D6, #141414, dan #343434). Garis horizontal schedule memakai inset shadow agar tidak mengubah ukuran layout. Divider experiences/kontak memakai background-color; rail memakai pseudo-element dan tick updates memakai span dekoratif. Folder assets/dividers dihapus. Penggaris updates yang kompleks tetap memakai SVG asli. Pemetaan pengganti dicatat pada css_replacements di asset-renames.json.
+
+### Animasi accordion — 17 November 2026
+
+Schedule memakai animasi tinggi 700ms dan fade/gerak konten 500ms saat membuka (250ms saat menutup). Grup `name` native dilepas selama modul aktif agar penutupan sibling dapat dianimasikan; kontrol tetap berupa `details`/`summary` dan kembali native tanpa JavaScript. Klik berulang membalik arah dari tinggi saat itu. Reduced motion mengganti state langsung; resize menyelesaikan transisi dan mengembalikan tinggi otomatis. Tween dimiliki GSAP context, listener memakai AbortController, dan ScrollTrigger direfresh setelah layout stabil.
+
+### Sambungan footer–hero dan scroll loop — 17 November 2026
+
+Acuan Figma `4005:669` beserta ornamen `4005:343` dan wordmark `4005:618`. Ornamen memakai aset asli `hero/concert-crowd.png` yang sudah ada, di balik gradasi hitam 267px. Ukuran/crop mengikuti foto hero yang dirender; bagian foto tepat sebelum titik awal hero ditampilkan pada akhir footer, sehingga koordinat gambarnya berlanjut pada sambungan. Wordmark asli dipertahankan.
+
+Lenis memakai `infinite: true` dan `syncTouch: true`, tetap pada satu ticker GSAP. Resource `ScrollLoop` menambahkan satu viewport salinan visual hero/header di akhir halaman. Karena batas scroll native adalah tinggi dokumen dikurangi tinggi viewport, salinan ini membuat titik wrap identik dengan tampilan awal. Hero salinan tetap `inert`/`aria-hidden` dan mengikuti state sisi kartu asli. Header salinan interaktif: efek hover CSS tetap berjalan, menu mobile diinisialisasi dengan ID navigasi unik, dan tombol tiket memakai listener terdelegasi yang sama dengan header asli. Resource dan listener dibuang saat destroy/HMR atau reduced motion aktif. ResizeObserver memperbarui tinggi dan crop saat breakpoint berubah. Updates mengizinkan gesture horizontal native melalui `data-lenis-prevent-horizontal`. Reduced motion tetap native dan tidak berputar otomatis.
+
+Verifikasi: kecocokan aset diperiksa dengan SHA-256 terhadap pemetaan Figma, sambungan visual dan putaran dua arah diperiksa di Chrome lokal, build dan pemeriksaan CSS produksi lulus. Touch sync dikonfigurasi sesuai README Lenis versi lokal; belum diverifikasi pada perangkat iOS/Android fisik.

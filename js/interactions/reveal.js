@@ -1,14 +1,17 @@
 export function initMotion(root, { gsap }) {
   const media = gsap.matchMedia();
   media.add('(prefers-reduced-motion: no-preference)', () => {
-    gsap.from(root.querySelectorAll('.hero__introduction, .hero__signature'), {
-      y: 18,
-      opacity: 0,
-      duration: 1,
-      stagger: .12,
-      ease: 'power3.out',
-      clearProps: 'transform,opacity',
-    });
+    // The preloader owns the hero entrance when it runs.
+    if (!document.documentElement.classList.contains('is-preloading')) {
+      gsap.from(root.querySelectorAll('.hero__introduction, .hero__signature'), {
+        y: 18,
+        opacity: 0,
+        duration: 1,
+        stagger: .12,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+      });
+    }
     for (const element of root.querySelectorAll('[data-reveal]')) {
       gsap.from(element, {
         y: 24,

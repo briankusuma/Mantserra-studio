@@ -1403,6 +1403,31 @@ button.pill:hover, .pill--active {
   );
 }
 
+/* Preloader · Figma 4118:806. Gate set by the head script; preloader.js animates it open. */
+.is-preloading {
+  overflow: hidden;
+}
+
+.is-preloading [data-header],
+.is-preloading [data-hero] .hero__background,
+.is-preloading [data-hero] .hero__introduction,
+.is-preloading [data-hero] .hero__bottom,
+.is-preloading [data-hero] ~ *,
+.is-preloading .site-footer,
+.is-preloading .scroll-loop {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.is-preloading [data-hero] [data-ticket-tilt] {
+  pointer-events: none;
+}
+
+/* Until the module takes over, keep the ticket out of sight to avoid a jump. */
+.is-preloading:not([data-preloader]) [data-hero] [data-ticket-tilt] {
+  visibility: hidden;
+}
+
 .scroll-loop {
   position: relative;
   height: 100vh;

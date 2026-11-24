@@ -9,6 +9,20 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="./assets/images/favicon.svg" />
     <link rel="preload" href="./assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="./style.css" />
+    <script>
+      // Preloader gate before first paint. Without the module the gate opens itself,
+      // so content stays readable; reduced motion and deep links skip it.
+      (() => {
+        const root = document.documentElement;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (location.hash && location.hash !== '#home') return;
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        root.classList.add('is-preloading');
+        setTimeout(() => {
+          if (!root.hasAttribute('data-preloader')) root.classList.remove('is-preloading');
+        }, 4000);
+      })();
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

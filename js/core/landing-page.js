@@ -11,6 +11,7 @@ import { initRulerScroll } from '../interactions/ruler-scroll.js';
 import { initUpdates } from '../sections/updates.js';
 import { initSectionOverlaps } from '../interactions/section-overlap.js';
 import { initTicketTilt } from '../interactions/ticket-tilt.js';
+import { initPreloader } from '../interactions/preloader.js';
 
 export class LandingPage {
   constructor(root) {
@@ -18,20 +19,30 @@ export class LandingPage {
     this.events = null;
     this.media = null;
     this.refreshPending = false;
+    this.scroll = null;
+    this.scrollLocked = false;
     this.requestRefresh = this.requestRefresh.bind(this);
     this.flushRefresh = this.flushRefresh.bind(this);
+    this.setScrollLocked = this.setScrollLocked.bind(this);
+  }
+
+  // Lock state outlives a Lenis instance, so one created later starts locked too.
+  setScrollLocked(locked) {
+    this.scrollLocked = locked;
+    this.scroll?.setLocked(locked);
   }
 
   init() {
     if (this.events) return;
     this.events = new AbortController();
     this.destroyNavigation = initNavigation(this.root.querySelector('[data-header]'));
-    const services = { requestRefresh: this.requestRefresh, gsap };
+    const services = { requestRefresh: this.requestRefresh, setScrollLocked: this.setScrollLocked, gsap };
     this.cleanups = [
       initExperiences(this.root.querySelector('[data-experiences]'), services),
       initSchedule(this.root.querySelector('[data-schedule]'), services),
       initTickets(this.root),
       initTicketTilt(this.root, services),
+      initPreloader(this.root, services),
       initContact(this.root.querySelector('[data-contact]')),
       initMotion(this.root, services),
       initSectionOverlaps(this.root, services),
@@ -42,8 +53,13 @@ export class LandingPage {
     this.media.add('(prefers-reduced-motion: no-preference)', () => {
       if (!features.smoothScroll) return;
       const scroll = new SmoothScroll({ root: this.root, requestRefresh: this.requestRefresh });
+      scroll.setLocked(this.scrollLocked);
       scroll.init();
-      return () => scroll.destroy();
+      this.scroll = scroll;
+      return () => {
+        scroll.destroy();
+        if (this.scroll === scroll) this.scroll = null;
+      };
     });
 
     if (document.readyState === 'complete') {

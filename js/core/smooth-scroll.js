@@ -6,6 +6,7 @@ import { ScrollLoop } from './scroll-loop.js';
 export class SmoothScroll {
   constructor({ root = document, requestRefresh = () => {} } = {}) {
     this.lenis = null;
+    this.locked = false;
     this.loop = new ScrollLoop(root, () => {
       this.lenis?.resize();
       requestRefresh();
@@ -24,9 +25,17 @@ export class SmoothScroll {
       syncTouch: true,
     });
 
+    if (this.locked) this.lenis.stop();
     this.lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(this.tick);
     gsap.ticker.lagSmoothing(0);
+  }
+
+  setLocked(locked) {
+    this.locked = locked;
+    if (!this.lenis) return;
+    if (locked) this.lenis.stop();
+    else this.lenis.start();
   }
 
   destroy() {

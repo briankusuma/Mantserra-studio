@@ -1423,6 +1423,13 @@ button.pill:hover, .pill--active {
   pointer-events: none;
 }
 
+/* SplitText line masks for the hero reveal. The padding gives italic overhangs
+   and descenders room inside the clip; the negative margin keeps layout unchanged. */
+.hero-line-mask {
+  padding: 0 .12em .1em;
+  margin: 0 -.12em -.1em;
+}
+
 /* Until the module takes over, keep the ticket out of sight to avoid a jump. */
 .is-preloading:not([data-preloader]) [data-hero] [data-ticket-tilt] {
   visibility: hidden;

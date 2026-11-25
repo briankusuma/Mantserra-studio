@@ -1,4 +1,6 @@
 // Preloader · Figma 4118:806 — ticket back on black, flip to front, then the hero scene arrives.
+import { SplitText } from '../core/animation.js';
+
 const MIN_HOLD = 1400;
 const MAX_WAIT = 4000;
 
@@ -20,7 +22,9 @@ export function initPreloader(root, { gsap, requestRefresh, setScrollLocked }) {
   const back = stage?.querySelector('[data-ticket-back]');
   const background = hero?.querySelector('.hero__background');
   const photo = hero?.querySelector('.hero__photo');
-  const copy = [hero?.querySelector('.hero__introduction'), hero?.querySelector('.hero__bottom')].filter(Boolean);
+  const introduction = hero?.querySelector('.hero__introduction');
+  const title = hero?.querySelector('.hero__title');
+  const smallCopy = hero ? [...hero.querySelectorAll('.hero__caption, .hero__legal')] : [];
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduce || !surface || !rotor || !front || !back || !background) {
@@ -76,6 +80,15 @@ export function initPreloader(root, { gsap, requestRefresh, setScrollLocked }) {
     if (events.signal.aborted) return;
 
     context.add(() => {
+      // Line masks (SplitText 3.13+). Fonts are ready here, so lines are final;
+      // the context revert restores the original markup once the intro ends.
+      const introLines = introduction
+        ? SplitText.create(introduction, { type: 'lines', mask: 'lines', linesClass: 'hero-line' }).lines
+        : [];
+      const titleWords = title
+        ? SplitText.create(title, { type: 'lines,words', mask: 'lines', linesClass: 'hero-line', wordsClass: 'hero-word' }).words
+        : [];
+
       gsap.timeline({
         onComplete: () => {
           // Every end value equals the CSS state, so reverting leaves no jump.
@@ -95,7 +108,9 @@ export function initPreloader(root, { gsap, requestRefresh, setScrollLocked }) {
         .fromTo(background, { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1.6, ease: 'power2.out' }, 'scene')
         .to(surface, { y: 0, duration: 1.2, ease: 'power3.inOut' }, 'scene')
         .fromTo([header].filter(Boolean), { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: .9, ease: 'power3.out' }, 'scene+=.6')
-        .fromTo(copy, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1, stagger: .12, ease: 'power3.out' }, 'scene+=.7')
+        .from(introLines, { yPercent: 120, duration: 1.1, stagger: .1, ease: 'expo.out' }, 'scene+=.7')
+        .from(titleWords, { yPercent: 120, duration: 1.2, stagger: .12, ease: 'expo.out' }, 'scene+=.85')
+        .from(smallCopy, { opacity: 0, y: 12, duration: .9, stagger: .08, ease: 'power3.out' }, 'scene+=1.15')
         // Inline from-states now hold the scene hidden; release the CSS gate.
         .call(() => html.classList.remove('is-preloading'), null, 'scene');
     });

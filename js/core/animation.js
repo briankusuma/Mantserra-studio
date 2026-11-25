@@ -1,9 +1,10 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
-export { gsap, ScrollTrigger };
+export { gsap, ScrollTrigger, SplitText };
 
 export const motion = Object.freeze({
   duration: 0.8,

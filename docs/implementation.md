@@ -96,3 +96,9 @@ Modul `js/interactions/preloader.js` memakai kartu hero asli. Script kecil di `<
 Batas: preloader dilewati pada reduced motion dan deep link dengan hash selain `#home`. `scrollRestoration` diubah ke manual agar intro selalu dimulai dari atas. Tanpa JavaScript, gate tidak pernah dipasang. Jika modul gagal dimuat, gate membuka sendiri setelah 4 detik sehingga konten tetap terbaca. HMR membersihkan state dan tidak memutar ulang preloader.
 
 Verifikasi: build produksi lulus. Headless Chrome 1440 × 1024 menghasilkan tiga state yang cocok dengan ketiga frame Figma. Pada iframe 393px kartu tetap di tengah lalu turun ke posisi hero mobile. Waktu nyata pada jaringan lambat dan perangkat fisik belum diperiksa.
+
+#### Text reveal hero — 25 November 2026
+
+Tahap ketiga preloader memakai GSAP SplitText (sudah ada di paket `gsap` 3.15.0, opsi `mask` membutuhkan 3.13+). Introduction dipecah per baris dengan `mask: 'lines'`. Judul "Laude Simmons" dipecah `lines,words`, lalu kata-katanya naik bergantian di dalam mask baris. Caption dan legal masuk dengan fade. Split dibuat setelah font siap dan dimiliki context GSAP preloader, sehingga revert di akhir intro mengembalikan markup asli, termasuk `<em>`. Wrapper `.hero-line-mask` diberi padding dengan margin negatif agar ekor huruf italic dan descender tidak terpotong tanpa mengubah layout. SplitText memasang `aria-label` pada elemen induk selama animasi.
+
+Verifikasi: rekaman Chrome melalui DevTools Protocol menunjukkan baris introduction dan kata judul muncul dari mask. Frame sebelum dan sesudah revert identik, jadi tidak ada lompatan. Build produksi lulus. Belum diperiksa di Safari.

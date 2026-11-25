@@ -89,7 +89,7 @@
       </section>
       <!-- Experiences · Figma 3915:386 -->
       <section class="experiences layout-container" id="experiences" aria-labelledby="experiences-title" data-experiences>
-        <h2 class="experiences__heading art-heading" id="experiences-title" data-reveal>
+        <h2 class="experiences__heading art-heading" id="experiences-title" data-mask-reveal>
           <span class="u-sr-only">A curated celebration of music, art, and atmosphere. From underground sounds to global headliners.</span>
           <span class="art-heading__visual art-heading__visual--intro" aria-hidden="true"></span>
         </h2>
@@ -113,8 +113,8 @@
             </div>
           </div>
           <div class="experiences__information">
-            <div class="experiences__identity"><div class="metadata"><span>Experiences</span><span>24 MAR</span></div><h3>Simmons Wellington</h3></div>
-            <div class="experiences__description"><p>An unforgettable night of live performances, visual installations, and immersive soundscapes.</p><p class="experiences__location metadata">Wellington, New Zealand</p></div>
+            <div class="experiences__identity"><div class="metadata"><span>Experiences</span><span>24 MAR</span></div><h3 data-text-reveal>Simmons Wellington</h3></div>
+            <div class="experiences__description"><p data-text-reveal>An unforgettable night of live performances, visual installations, and immersive soundscapes.</p><p class="experiences__location metadata">Wellington, New Zealand</p></div>
             <div class="experiences__indicators" aria-hidden="true">
               <img src="./assets/icons/experiences-indicators.svg" width="56" height="26" alt="" />
             </div>
@@ -139,11 +139,11 @@
         </div>
       </section>
       <!-- Artist feature · Figma 3915:425 -->
-      <section class="artist layout-container" id="artists" aria-labelledby="artist-title" data-section-overlay>
+      <section class="artist layout-container" id="artists" aria-labelledby="artist-title" data-section-overlay data-artist-scene>
         <div class="artist__left">
           <div class="artist__metadata"><p>American Football</p><span>001</span></div>
-          <div class="artist__portrait" data-reveal>
-            <img class="artist__photo" src="./assets/images/artists/concert-couple.png" width="1808" height="2400" alt="Two concertgoers in warm amber light" loading="lazy" />
+          <div class="artist__portrait">
+            <div class="artist__photo-frame" data-artist-photo><img class="artist__photo" src="./assets/images/artists/concert-couple.png" width="1808" height="2400" alt="Two concertgoers in warm amber light" loading="lazy" /></div>
             <div class="artist__ticket-stage" data-ticket-tilt>
               <div class="ticket-motion" data-ticket-tilt-surface>
                 <div class="ticket-motion__flip" data-ticket-flip-surface>
@@ -176,9 +176,9 @@
         </div>
         <div class="artist__right">
           <div class="artist__metadata"><p>The Sound of the Year</p><span>2026</span></div>
-          <h2 class="artist__heading art-heading" id="artist-title" data-reveal><span class="u-sr-only">A carefully curated mix of rising talents and conic performers.</span><span class="art-heading__visual art-heading__visual--artist" aria-hidden="true"></span></h2>
+          <h2 class="artist__heading art-heading" id="artist-title" data-mask-reveal><span class="u-sr-only">A carefully curated mix of rising talents and conic performers.</span><span class="art-heading__visual art-heading__visual--artist" aria-hidden="true"></span></h2>
           <div class="artist__details">
-            <div class="artist__copy"><span class="pill">Alternative</span><p>A space dedicated to boundary-pushing sounds and experimental performances. From genre-defying artists to unexpected collaborations.</p></div>
+            <div class="artist__copy"><span class="pill">Alternative</span><p data-text-reveal>A space dedicated to boundary-pushing sounds and experimental performances. From genre-defying artists to unexpected collaborations.</p></div>
             <div class="artist__secondary-photo"><img src="./assets/images/artists/motion-portrait.png" width="992" height="1200" alt="Artist portrait with expressive motion blur" loading="lazy" /></div>
           </div>
         </div>
@@ -187,12 +187,12 @@
       <section class="schedule" id="schedule" aria-labelledby="schedule-title" data-schedule>
         <div class="schedule__rails" aria-hidden="true"></div>
         <div class="schedule__heading-row">
-          <h2 class="schedule__heading art-heading" id="schedule-title" data-reveal><span class="u-sr-only">Electronic Music Showcase &amp; Live Performances</span><span class="art-heading__visual art-heading__visual--schedule" aria-hidden="true"></span></h2>
+          <h2 class="schedule__heading art-heading" id="schedule-title" data-mask-reveal><span class="u-sr-only">Electronic Music Showcase &amp; Live Performances</span><span class="art-heading__visual art-heading__visual--schedule" aria-hidden="true"></span></h2>
           <button class="schedule__other text-button" type="button" data-show-schedule>View other Schedule</button>
         </div>
         <div class="schedule__list">
           <details class="schedule__item" name="showcase">
-            <summary class="schedule__summary"><span class="schedule__number">001</span><h3 class="schedule__name">Opening Set</h3><span class="schedule__tags"><span class="pill">16:00–18:00</span><span class="pill">Categories</span></span><span class="schedule__time">16:00–18:00</span></summary>
+            <summary class="schedule__summary"><span class="schedule__number">001</span><h3 class="schedule__name" data-text-reveal>Opening Set</h3><span class="schedule__tags"><span class="pill">16:00–18:00</span><span class="pill">Categories</span></span><span class="schedule__time">16:00–18:00</span></summary>
             <div class="schedule__panel">
               <div class="schedule__content">
                 <div class="schedule__images">
@@ -208,7 +208,7 @@
             </div>
           </details>
           <details class="schedule__item" name="showcase" open>
-            <summary class="schedule__summary"><span class="schedule__number">002</span><h3 class="schedule__name">Headliner</h3><span class="schedule__tags"><span class="pill">18:00–20:00</span><span class="pill">Categories</span><span class="pill">Categories</span></span><span class="schedule__time">18:00–20:00</span></summary>
+            <summary class="schedule__summary"><span class="schedule__number">002</span><h3 class="schedule__name" data-text-reveal>Headliner</h3><span class="schedule__tags"><span class="pill">18:00–20:00</span><span class="pill">Categories</span><span class="pill">Categories</span></span><span class="schedule__time">18:00–20:00</span></summary>
             <div class="schedule__panel">
               <div class="schedule__content">
                 <div class="schedule__images">
@@ -224,7 +224,7 @@
             </div>
           </details>
           <details class="schedule__item" name="showcase">
-            <summary class="schedule__summary"><span class="schedule__number">003</span><h3 class="schedule__name">Late Night Session</h3><span class="schedule__tags"><span class="pill">20:00–23:00</span><span class="pill">Categories</span></span><span class="schedule__time">20:00–23:00</span></summary>
+            <summary class="schedule__summary"><span class="schedule__number">003</span><h3 class="schedule__name" data-text-reveal>Late Night Session</h3><span class="schedule__tags"><span class="pill">20:00–23:00</span><span class="pill">Categories</span></span><span class="schedule__time">20:00–23:00</span></summary>
             <div class="schedule__panel">
               <div class="schedule__content">
                 <div class="schedule__images">
@@ -240,7 +240,7 @@
             </div>
           </details>
           <details class="schedule__item" name="showcase">
-            <summary class="schedule__summary"><span class="schedule__number">004</span><h3 class="schedule__name">Closing Act</h3><span class="schedule__tags"><span class="pill">23:00–01:00</span><span class="pill">Categories</span></span><span class="schedule__time">23:00–01:00</span></summary>
+            <summary class="schedule__summary"><span class="schedule__number">004</span><h3 class="schedule__name" data-text-reveal>Closing Act</h3><span class="schedule__tags"><span class="pill">23:00–01:00</span><span class="pill">Categories</span></span><span class="schedule__time">23:00–01:00</span></summary>
             <div class="schedule__panel">
               <div class="schedule__content">
                 <div class="schedule__images">
@@ -260,8 +260,8 @@
       <!-- Editorial updates · Figma 3915:508 -->
       <section class="updates" id="updates" aria-labelledby="updates-title" data-updates data-section-overlay>
         <div class="updates__ruler" aria-hidden="true" data-ruler><img src="./assets/images/updates-ruler.svg" width="2314" height="38.5938" alt="" data-ruler-track /></div>
-        <div class="updates__top layout-container"><p>Be the first to hear about lineup drops.</p><p>Exclusive access, and limited releases.</p></div>
-        <div class="updates__heading-group" data-reveal><p class="updates__eyebrow">( Stay in the Loop )</p><h2 class="updates__heading art-heading" id="updates-title"><span class="u-sr-only">Be the first to know about lineup drops, exclusive access, and special releases.</span><span class="art-heading__visual art-heading__visual--updates" aria-hidden="true"></span></h2></div>
+        <div class="updates__top layout-container"><p data-text-reveal>Be the first to hear about lineup drops.</p><p data-text-reveal>Exclusive access, and limited releases.</p></div>
+        <div class="updates__heading-group"><p class="updates__eyebrow" data-text-reveal>( Stay in the Loop )</p><h2 class="updates__heading art-heading" id="updates-title" data-mask-reveal><span class="u-sr-only">Be the first to know about lineup drops, exclusive access, and special releases.</span><span class="art-heading__visual art-heading__visual--updates" aria-hidden="true"></span></h2></div>
         <span class="updates__tick" aria-hidden="true"></span>
         <div class="updates__viewport" data-updates-viewport data-lenis-prevent-horizontal>
           <div class="updates__grid" data-updates-track>
@@ -329,10 +329,10 @@
     <footer class="site-footer layout-container" id="about" aria-label="About Mantserra">
       <nav class="site-footer__navigation" aria-label="Footer"><a href="#home">Home</a><a href="#artists">Artists</a><span>Playlists</span><span>Placements</span><a href="#about">About us</a></nav>
       <div class="site-footer__content">
-        <div class="site-footer__left"><p class="site-footer__description">We’re a music-driven platform connecting artists, curators, and brands through thoughtfully crafted sound.</p>
+        <div class="site-footer__left"><p class="site-footer__description" data-text-reveal>We’re a music-driven platform connecting artists, curators, and brands through thoughtfully crafted sound.</p>
           <form class="contact" data-contact><label class="contact__label" for="contact-email">Get contact</label><div class="contact__row"><input class="contact__input" id="contact-email" name="email" type="email" placeholder="Your Email" autocomplete="email" required /><button class="contact__send text-button" type="submit">Send</button></div><div class="contact__divider" aria-hidden="true"></div><p class="contact__status" role="status" data-contact-status></p></form>
         </div>
-        <h2 class="site-footer__heading" data-reveal>Get updates on new artists, curated playlists, and exclusive releases.</h2>
+        <h2 class="site-footer__heading" data-text-reveal>Get updates on new artists, curated playlists, and exclusive releases.</h2>
       </div>
       <div class="site-footer__wordmark" role="img" aria-label="Mantserra"></div>
       <div class="site-footer__ornament" aria-hidden="true">

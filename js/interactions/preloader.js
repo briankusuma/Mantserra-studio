@@ -83,10 +83,10 @@ export function initPreloader(root, { gsap, requestRefresh, setScrollLocked }) {
       // Line masks (SplitText 3.13+). Fonts are ready here, so lines are final;
       // the context revert restores the original markup once the intro ends.
       const introLines = introduction
-        ? SplitText.create(introduction, { type: 'lines', mask: 'lines', linesClass: 'hero-line' }).lines
+        ? SplitText.create(introduction, { type: 'lines', mask: 'lines', linesClass: 'reveal-line' }).lines
         : [];
       const titleWords = title
-        ? SplitText.create(title, { type: 'lines,words', mask: 'lines', linesClass: 'hero-line', wordsClass: 'hero-word' }).words
+        ? SplitText.create(title, { type: 'lines,words', mask: 'lines', linesClass: 'reveal-line', wordsClass: 'hero-word' }).words
         : [];
 
       gsap.timeline({

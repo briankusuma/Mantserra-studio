@@ -796,13 +796,26 @@ button.pill:hover, .pill--active {
   color: rgb(0 0 0 / 60%);
 }
 
+/* The photo clips inside its own frame so the ticket can leave the portrait
+   during the scroll scene (js/sections/artist.js). */
 .artist__portrait {
   position: relative;
   height: 908px;
   margin-top: 28px;
   border-radius: 8px;
-  overflow: hidden;
   isolation: isolate;
+}
+
+.artist__photo-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  isolation: isolate;
+}
+
+.artist--staging [data-ticket-tilt] {
+  pointer-events: none;
 }
 
 .artist__photo {
@@ -1423,11 +1436,16 @@ button.pill:hover, .pill--active {
   pointer-events: none;
 }
 
-/* SplitText line masks for the hero reveal. The padding gives italic overhangs
+/* SplitText line masks (hero entrance and scroll reveals). The padding gives italic overhangs
    and descenders room inside the clip; the negative margin keeps layout unchanged. */
-.hero-line-mask {
+.reveal-line-mask {
   padding: 0 .12em .1em;
   margin: 0 -.12em -.1em;
+}
+
+/* Outlined SVG headings rise as one block; the SVG fills its box exactly. */
+[data-mask-reveal] {
+  overflow: clip;
 }
 
 /* Until the module takes over, keep the ticket out of sight to avoid a jump. */

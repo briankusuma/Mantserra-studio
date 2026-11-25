@@ -12,6 +12,8 @@ import { initUpdates } from '../sections/updates.js';
 import { initSectionOverlaps } from '../interactions/section-overlap.js';
 import { initTicketTilt } from '../interactions/ticket-tilt.js';
 import { initPreloader } from '../interactions/preloader.js';
+import { initTextReveal } from '../interactions/text-reveal.js';
+import { initArtistScene } from '../sections/artist.js';
 
 export class LandingPage {
   constructor(root) {
@@ -46,8 +48,11 @@ export class LandingPage {
       initContact(this.root.querySelector('[data-contact]')),
       initMotion(this.root, services),
       initSectionOverlaps(this.root, services),
+      initArtistScene(this.root, services),
       initRulerScroll(this.root.querySelector('[data-updates]'), services),
       initUpdates(this.root.querySelector('[data-updates]'), services),
+      // After the Updates pin, so footer triggers are measured with its spacing.
+      initTextReveal(this.root, services),
     ];
     this.media = gsap.matchMedia();
     this.media.add('(prefers-reduced-motion: no-preference)', () => {

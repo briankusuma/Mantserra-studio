@@ -102,3 +102,24 @@ Verifikasi: build produksi lulus. Headless Chrome 1440 × 1024 menghasilkan tiga
 Tahap ketiga preloader memakai GSAP SplitText (sudah ada di paket `gsap` 3.15.0, opsi `mask` membutuhkan 3.13+). Introduction dipecah per baris dengan `mask: 'lines'`. Judul "Laude Simmons" dipecah `lines,words`, lalu kata-katanya naik bergantian di dalam mask baris. Caption dan legal masuk dengan fade. Split dibuat setelah font siap dan dimiliki context GSAP preloader, sehingga revert di akhir intro mengembalikan markup asli, termasuk `<em>`. Wrapper `.hero-line-mask` diberi padding dengan margin negatif agar ekor huruf italic dan descender tidak terpotong tanpa mengubah layout. SplitText memasang `aria-label` pada elemen induk selama animasi.
 
 Verifikasi: rekaman Chrome melalui DevTools Protocol menunjukkan baris introduction dan kata judul muncul dari mask. Frame sebelum dan sesudah revert identik, jadi tidak ada lompatan. Build produksi lulus. Belum diperiksa di Safari.
+
+#### Text reveal semua section — 25 November 2026
+
+Mask reveal dari hero diterapkan ke section lain melalui modul `js/interactions/text-reveal.js`, dipicu ScrollTrigger (`top 88%`, sekali jalan).
+
+- `data-text-reveal`, untuk teks HTML yang dipecah per baris dengan SplitText `mask: 'lines'`: nama dan deskripsi event Experiences, paragraf Artist, empat nama slot Schedule, dua teks atas dan eyebrow Updates, deskripsi dan heading Footer.
+- `data-mask-reveal`, untuk empat heading outline SVG (Experiences, Artist, Schedule, Updates). Elemen ini tidak bisa dipecah, sehingga naik sebagai satu blok di dalam `overflow: clip`.
+
+`autoSplit` memecah ulang teks setelah font dimuat atau lebar berubah sebelum animasi berjalan. Setelah animasi selesai, `revert()` mengembalikan markup asli dan memutus observer, jadi teks tidak diputar ulang. Modul diinisialisasi setelah pin Updates agar posisi trigger footer memperhitungkan pin spacing. Class mask (`reveal-line`) sama dengan hero. Reduced motion tidak memecah teks. Kartu Updates (hover crossfade dan pin horizontal) serta isi panel accordion Schedule tidak diberi reveal agar tidak bentrok dengan animasi yang sudah ada. Gambar tetap memakai `data-reveal` di `reveal.js`.
+
+Verifikasi: rekaman scroll Chrome melalui DevTools Protocol menunjukkan reveal pada Artist, Updates dan Footer. Jumlah mask turun ke 0 setelah semua reveal selesai, tanpa error console. Build produksi lulus.
+
+### Scroll scene Artist — 25 November 2026
+
+Acuan Figma `4187:1285` (`scroll-animation`), empat frame berurutan: sisi belakang kartu di tengah latar cream, flip ke sisi depan, foto Artist muncul dengan kartu masih di tengah (`4187:1305`), lalu layout final Artist (`4187:1326`) dengan teks. Frame 1–2 di Figma memakai konten kartu Brookly; implementasi memakai kartu Artist (Samantha) beserta sisi belakangnya sendiri, karena kartu itulah yang mendarat di section ini.
+
+Modul `js/sections/artist.js` mem-pin section Artist sepanjang 1,8 × tinggi viewport dengan timeline scrub. Urutannya: kartu tertahan di tengah viewport dan flip edge-on dari belakang ke depan (`quickSetter`, dua arah); clip foto utama terbuka dari bawah dengan scale 1,15 → 1; foto kecil naik dari offset Figma (−16, +178); kartu bergeser ke slotnya. Setelah progres 0,86, metadata, heading SVG, pill dan paragraf (SplitText per baris) diputar sebagai satu reveal, dan berbalik saat scroll naik. Clip foto dipindah ke `.artist__photo-frame` agar kartu bisa keluar dari potret selama scene. Tilt dan klik-flip kartu dimatikan (`artist--staging`) sampai kartu mendarat. Pin memakai `refreshPriority: 1` agar trigger di bawahnya diukur dengan pin spacing.
+
+Scene aktif pada `(min-width: 1024px)` tanpa reduced motion. Di bawah itu section statis, dan teksnya memakai reveal biasa dari `text-reveal.js` melalui query terpisah, sehingga melewati breakpoint tidak memutar ulang reveal section lain. `data-reveal` pada potret dihapus karena scene yang mengatur kemunculannya.
+
+Verifikasi: rekaman scroll Chrome 1440 × 1024 melalui DevTools Protocol menghasilkan keempat state Figma secara berurutan. Scroll balik mengembalikan teks dan sisi belakang kartu, tanpa error console. Build produksi lulus. Mobile/tablet, Safari, dan trackpad fisik belum diperiksa.
